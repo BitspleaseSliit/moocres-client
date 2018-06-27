@@ -1,0 +1,234 @@
+.hide-on-desktop{
+	display: none;
+}
+/* Responsive >= 2000 */
+@media screen and(min-width: 2000px){
+	.cover-image:first-child img{
+		margin-left: auto;
+	}
+}
+/* Responsive General */
+@media (max-width: 1024px){
+	.hide-on-desktop{
+		display: block;
+	}
+	.hide-on-device{
+		display: none;
+	}
+	#application-form input[type="submit"]{
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+	#mobile-application input{
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+}
+/* Tablet Only */
+@media (max-width: 1024px) and (min-width: 768px){
+  .hide-on-tablet{
+    display: none;
+  }
+	.container.hentry{
+		padding: 0 150px 0 35px;
+	}
+	#recipe-apply-now{
+		right: 25px;
+	}
+	.hero-animate{
+		margin: 60px auto -74px;
+	}
+	.recipe-box h3.recipe-box-title{
+		padding: 0 25px;
+	}
+}
+@media (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
+	.recipe-box h3.recipe-box-title{
+		height: 75px;
+		padding: 0 10px;
+	}
+}
+/* Mobile */
+@media (max-width: 767px){
+	/* Hide admin bar on mobile */
+	#wpadminbar{
+		display: none !important;
+	}
+	#application-form{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.recipe-container{
+		border-top-right-radius: 0;
+		border-top-left-radius: 0;
+	}
+	.hide-on-mobile{
+		display: none !important;
+	}
+  .columns{
+		flex-basis: 100%;
+	}
+	.hero h1{
+		font-size: 32px;
+		margin-bottom: 36px;
+	}
+	.subtitle{
+		font-size: 16px;
+	}
+	#masthead > #logo a:before{
+		top: 7px;
+		width: 151px;
+		height: 26px;
+	}
+	.section-title{		
+		font: 400 55px/1.3 "Merriweather", Georgia, serif;
+    	padding-bottom: 10px;
+    	color: #4A4A4A;
+    	text-transform: capitalize;
+	}
+	.recipe-box{
+		margin-bottom: 60px;
+	}
+	.recipe-box:last-child{
+		margin-bottom: 0;
+	}
+	section{
+		padding: 50px 0;
+	}
+	#go-lemonade .columns{
+		flex-basis: 50%;
+	}
+	#footer{
+		padding-bottom: 120px;
+	}
+	#menu-wrapper #footer-social{ position: absolute; bottom: 30px; }
+	footer #footer-social, footer #footer-left{ float: none; text-align: center; }
+	footer #footer-social ul, footer #footer-left ul{ display: inline-block; }
+	footer #footer-social{ padding-bottom: 35px; }
+	#footer-menu li{ float: none; display: inline-block; }
+	.recipe-header{
+		text-align: center;
+		margin-top: 0;
+	}
+	.recipe-header img{
+		display: inline-block;
+	}
+	.recipe-header .recipe-title{
+		font-size: 28px;
+		margin: 30px 0 10px;
+		line-height: 1.5;
+	}
+	.recipe-container{
+		border-left: 0;
+		border-bottom: 0;
+		border-right: 0;
+		padding: 30px 0;
+		margin-bottom: 0;
+	}
+	.recipe-content{
+		max-width: 100%;
+	}
+	#recipe-share-box{
+		position: relative;
+		right: 0;
+		width: 100%;
+		border-top: solid 1px #ececec;
+		padding-top: 30px;
+	}
+	#recipe-share-box ul{
+		display: flex;
+		margin: 0 -3.5px;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+	#recipe-share-box ul li{
+		float: none;
+		width: 100%;
+		margin: 0 3.5px;
+	}
+	#recipe-share-box li a{
+		width: 100%;
+	}
+	
+	#mobile-application{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		border: solid 1px #ececec;
+		border-bottom: 0;
+		z-index: 9;
+		background-color: #fff;
+		padding: 20px;
+	}
+	#mobile-application input{
+		width: 100%;
+		text-decoration: none;
+		text-align: center;
+		margin-top: 0;
+		border: 0;
+		cursor: pointer;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		padding: 16.5px 32px;
+		font-family: 'Lato', serif;
+		font-weight: bold;
+	}
+	#page{
+		padding-top: 90px;
+	}
+	.single #page{
+		padding-top: 100px;
+	}
+	.hero-animate{
+		width: auto;
+		height: 240px;
+		background-size: cover;
+		margin: 40px -25px -44px;
+	}
+	#join-us{
+		padding-top: 90px;
+		padding-bottom: 70px;
+	}
+	.recipes-wrapper{
+		margin-top: 73px;
+	}
+	.fancybox-slide--iframe .fancybox-content{
+		width: auto;
+		height: auto;
+	}
+	#go-lemonade{
+		padding-top: 43px;
+		padding-bottom: 97px;
+	}
+	.recipe-box h3.recipe-box-title{
+		height: auto;
+		padding: 0 10px;
+	}
+	#no-role-fits input[type="submit"]{
+		font-size: 20px;
+		color: #FF952D;
+		margin-top: 15px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		border: 0;
+		background-color: transparent;
+		font-family: 'Lato', serif;
+	}
+	#application-form input[type="text"], #application-form input[type="email"], #application-form input[type="tel"]{
+		font-size: 16px;
+	}
+	#masthead{
+		padding: 0 10px;
+	}
+}
+@media (max-width: 750px) and (min-width: 500px){
+	.hero-animate{
+		height: 290px;
+		margin: 40px -25px -54px;
+	}
+}

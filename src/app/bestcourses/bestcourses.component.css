@@ -1,0 +1,21 @@
+.res{
+    max-width: fit-content !important;
+    width: 100% !important;
+}
+
+.res li{
+    border: 0px !important;
+}
+
+.mb20{
+    margin-bottom: 50px;
+}
+
+.border-no{
+    border: none;
+    cursor: pointer;
+}
+.search-box{
+    height: 50px;
+    width: 600px;
+}
