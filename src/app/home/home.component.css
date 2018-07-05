@@ -1,0 +1,22 @@
+.main-title {
+   
+	position: relative;
+	margin: 0;
+	padding: 0;
+	
+	
+	top: 47%;
+	left: 53%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.main-title > h1 {
+    color:#e65100;
+    padding-bottom:0px;
+}
+
+.title-top {
+	text-align: initial !important;
+}
+
