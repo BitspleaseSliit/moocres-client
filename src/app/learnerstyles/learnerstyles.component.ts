@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-learnerstyles',
   templateUrl: './learnerstyles.component.html',
@@ -9,6 +9,7 @@ export class LearnerstylesComponent implements OnInit {
 
   // tslint:disable-next-line:max-line-length
   answers: string[] = new Array();
+  // tslint:disable-next-line:max-line-length
   // answers: string[] = ['a', 'b', 'a', 'b', 'a', 'a', 'b', 'a', 'b', 'a', 'a', 'b', 'a', 'b', 'a', 'a', 'b', 'a', 'b', 'a', 'a', 'b', 'a', 'b', 'a', 'a', 'b', 'a', 'b', 'a', 'a', 'b', 'a', 'b', 'a', 'a', 'b', 'a', 'b', 'a', 'a', 'b', 'a', 'b'];
   ActivistA: number;
   ActivistB: number;
@@ -32,7 +33,6 @@ export class LearnerstylesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
   }
 
   private calculateing() {
@@ -125,6 +125,7 @@ export class LearnerstylesComponent implements OnInit {
 
   navigate(val) {
 
+    $('html,body').animate({ scrollTop: '0px' }, 'slow');
     if (val === 1) {
       this.pageNumber++;
       console.log('ANSER', this.answers[0]);
@@ -134,7 +135,16 @@ export class LearnerstylesComponent implements OnInit {
   }
 
 
+  toggle_info(id) {
 
-
+    const p = document.getElementById('info-panel-' + id);
+    const l = document.getElementById('info-btn-' + id);
+    l.classList.toggle('doc-link-active');
+    if (p.style.maxHeight) {
+      p.style.maxHeight = null;
+    } else {
+      p.style.maxHeight = p.scrollHeight + 'px';
+    }
+  }
 
 }

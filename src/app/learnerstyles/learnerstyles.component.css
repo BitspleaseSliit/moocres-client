@@ -1,3 +1,82 @@
 .common li{
     margin-left: 5% !important;
 }
+.common ol{
+    list-style: decimal-leading-zero;
+}
+
+.maxWidth{
+    width: 120%;
+}
+
+.myFont{
+    justify-content: center;
+    font-size: 18px;
+    font-family: 'Merriweather', serif;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+.regular{
+    margin-bottom: 30px;
+}
+
+.nextBtn{
+    color: #7f542d;
+}
+
+.mt100{
+    margin-top: 120px;
+}
+
+.pointer li{
+    cursor: pointer;
+}
+
+.info{
+    width: 250px;
+    margin-bottom: 15px;
+    margin-top: -25px;
+    text-align: justify;
+    /* border: solid 0.5px;
+    border-radius: 15px;
+    border-color: #ffd5b5; */
+}
+
+/* .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    /* position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+} */ 
+
+
+.doc-panel {
+    /* padding: 10px; */
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    display: block !important;
+  }
+  
+  .doc-link:before {
+    font-weight: 700;
+    margin-right: 5px;
+    font-size: 20px;
+  }
+  
+  .doc-link-active:before {
+    background-color: #ffe2cc !important;
+  }

@@ -1,746 +1,885 @@
 <div id="primary" class="content-area">
   <main id="main" class="site-main" role="main">
-
     <article id="post-1197" class="container post-1197 recipe type-recipe status-publish has-post-thumbnail hentry">
-      <div class="recipe-header">
+      <div class="recipe-header mt100">
         <!-- <div id="go-back" class="hide-on-mobile">
           <a href="https://makers.lemonade.com" title="Back">Go Back</a>
         </div> -->
         <div id="recipe-apply-now-fruit" class="hide-on-desktop hide-on-tablet" style="background-image: url(https://lmnd-makers.s3.amazonaws.com/uploads/2018/03/Onion.png)"></div>
         <h1 class="recipe-title">Find your Learning Style</h1>
-        <div class="recipe-meta">
-          <h2>Index of Learning Styles Questionnaire </h2>
-          <h2>Your response data and learning style profile are not stored or sent to anyone other than you. They cannot be recovered
-            once you have submitted the completed form and received the results.</h2>
+        <div class="recipe-description ">
+          <p>We&#8217;re helping you to find your learning style by taking your score in to count it takes only 10 mins! answer
+            the following questions and find out your style.</p>
         </div>
       </div>
+
+
+
       <div class="recipe-container common">
         <div class="recipe-content">
-          <div class="recipe-description">
-            <p>We&#8217;re helping you to find your learning style by taking your score in to count it takes only 10 mins! answer
-              the following questions and find out your style.</p>
-          </div>
-          <section class="recipe-section">
-            <div class="recipe-section-title">Questions</div>
-            <div class="recipe-section-content">
-              <div>
-                <div>
-                  <ol *ngIf="pageNumber==0">
-                    <li class="question">
-                      I understand something better after I<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q1a" name="q1" [(ngModel)]="answers[0]" value="a" >
-                          <label for="q1a">&nbsp; try it out.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q1b" name="q1" [(ngModel)]="answers[0]" value="b" >
-                          <label for="q1b">&nbsp; think it through.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I would rather be considered<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q2a" name="q2"   [(ngModel)]="answers[1]"value="a" >
-                          <label for="q2a">&nbsp; realistic.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q2b" name="q2"   [(ngModel)]="answers[1]"value="b" >
-                          <label for="q2b">&nbsp; innovative.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When I think about what I did yesterday, I am most likely to get<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q3a" name="q3"   [(ngModel)]="answers[2]"value="a" >
-                          <label for="q3a">&nbsp; a picture.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q3b" name="q3"   [(ngModel)]="answers[2]"value="b" >
-                          <label for="q3b">&nbsp; words.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I tend to<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q4a" name="q4"   [(ngModel)]="answers[3]"value="a" >
-                          <label for="q4a">&nbsp; understand details of a subject but may be
-                          fuzzy about its overall structure.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q4b" name="q4"   [(ngModel)]="answers[3]"value="b" >
-                          <label for="q4b">&nbsp; understand the overall structure but may be
-                          fuzzy about details.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When I am learning something new, it helps me to<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q5a" name="q5"   [(ngModel)]="answers[4]"value="a" >
-                          <label for="q5a">&nbsp; talk about it.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q5b" name="q5"   [(ngModel)]="answers[4]"value="b" >
-                          <label for="q5b">&nbsp; think about it.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      If I were a teacher, I would rather teach a course<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q6a" name="q6"   [(ngModel)]="answers[5]"value="a" >
-                          <label for="q6a">&nbsp; that deals with facts and real life
-                          situations.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q6b" name="q6"   [(ngModel)]="answers[5]"value="b" >
-                          <label for="q6b">&nbsp; that deals with ideas and theories.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I prefer to get new information in<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q7a" name="q7"   [(ngModel)]="answers[6]"value="a" >
-                          <label for="q7a">&nbsp; pictures, diagrams, graphs, or maps.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q7b" name="q7"   [(ngModel)]="answers[6]"value="b" >
-                          <label for="q7b">&nbsp; written directions or verbal information.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      Once I understand<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q8a" name="q8"   [(ngModel)]="answers[7]"value="a" >
-                          <label for="q8a">&nbsp; all the parts, I understand the whole
-                          thing.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q8b" name="q8"   [(ngModel)]="answers[7]"value="b" >
-                          <label for="q8b">&nbsp; the whole thing, I see how the parts fit.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      In a study group working on difficult material, I am more likely to<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q9a" name="q9"   [(ngModel)]="answers[8]"value="a" >
-                          <label for="q9a">&nbsp; jump in and contribute ideas.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q9b" name="q9"   [(ngModel)]="answers[8]"value="b" >
-                          <label for="q9b">&nbsp; sit back and listen.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I find it easier<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q10a" name="q10 " [(ngModel)]="answers[9]" value="a" >
-                          <label for="q10a">&nbsp; to learn facts.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q10b" name="q10 " [(ngModel)]="answers[9]" value="b" >
-                          <label for="q10b">&nbsp; to learn concepts.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      In a book with lots of pictures and charts, I am likely to<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q11a" name="q11 " [(ngModel)]="answers[10]" value="a" >
-                          <label for="q11a">&nbsp; look over the pictures and charts
-                          carefully.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q11b" name="q11 " [(ngModel)]="answers[10]" value="b" >
-                          <label for="q11b">&nbsp; focus on the written text.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                  </ol>
 
-                  <ol *ngIf="pageNumber==1" start="12">
-                    <li class="question">
-                      When I solve math problems<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q12a" name="q12 " [(ngModel)]="answers[11]" value="a" >
-                          <label for="q12a">&nbsp; I usually work my way to the solutions one step at
-                          a time.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q12b" name="q12 " [(ngModel)]="answers[11]" value="b" >
-                          <label for="q12b">&nbsp; I often just see the solutions but then have to
-                          struggle to figure out the steps to get to them.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      In classes I have taken<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q13a" name="q13 " [(ngModel)]="answers[12]" value="a" >
-                          <label for="q13a">&nbsp; I have usually gotten to know many of the
-                          students.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q13b" name="q13 " [(ngModel)]="answers[12]" value="b" >
-                          <label for="q13b">&nbsp; I have rarely gotten to know many of the students.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      In reading nonfiction, I prefer<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q14a" name="q14 " [(ngModel)]="answers[13]" value="a" >
-                          <label for="q14a">&nbsp; something that teaches me new facts or tells me
-                          how to do something.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q14b" name="q14 " [(ngModel)]="answers[13]" value="b" >
-                          <label for="q14b">&nbsp; something that gives me new ideas to think about.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I like teachers<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q15a" name="q15 " [(ngModel)]="answers[14]" value="a" >
-                          <label for="q15a">&nbsp; who put a lot of diagrams on the board.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q15b" name="q15 " [(ngModel)]="answers[14]" value="b" >
-                          <label for="q15b">&nbsp; who spend a lot of time explaining.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When I'm analyzing a story or a novel<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q16a" name="q16 " [(ngModel)]="answers[15]" value="a" >
-                          <label for="q16a">&nbsp; I think of the incidents and try to put them
-                          together to figure out the themes.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q16b" name="q16 " [(ngModel)]="answers[15]" value="b" >
-                          <label for="q16b">&nbsp; I just know what the themes are when I finish
-                          reading and then I have to go back and find the incidents that demonstrate
-                          them.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When I start a homework problem, I am more likely to<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q17a" name="q17 " [(ngModel)]="answers[16]" value="a" >
-                          <label for="q17a">&nbsp; start working on the solution immediately.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q17b" name="q17 " [(ngModel)]="answers[16]" value="b" >
-                          <label for="q17b">&nbsp; try to fully understand the problem first.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I prefer the idea of<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q18a" name="q18 " [(ngModel)]="answers[17]" value="a" >
-                          <label for="q18a">&nbsp; certainty.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q18b" name="q18 " [(ngModel)]="answers[17]" value="b" >
-                          <label for="q18b">&nbsp; theory.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I remember best<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q19a" name="q19 " [(ngModel)]="answers[18]" value="a" >
-                          <label for="q19a">&nbsp; what I see.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q19b" name="q19 " [(ngModel)]="answers[18]" value="b" >
-                          <label for="q19b">&nbsp; what I hear.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      It is more important to me that an instructor<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q20a" name="q20 " [(ngModel)]="answers[19]" value="a" >
-                          <label for="q20a">&nbsp; lay out the material in clear sequential
-                          steps.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q20b" name="q20 " [(ngModel)]="answers[19]" value="b" >
-                          <label for="q20b">&nbsp; give me an overall picture and relate the material
-                          to other subjects.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I prefer to study<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q21a" name="q21 " [(ngModel)]="answers[20]" value="a" >
-                          <label for="q21a">&nbsp; in a study group.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q21b" name="q21 " [(ngModel)]="answers[20]" value="b" >
-                          <label for="q21b">&nbsp; alone.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I am more likely to be considered<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q22a" name="q22 " [(ngModel)]="answers[21]" value="a" >
-                          <label for="q22a">&nbsp; careful about the details of my work.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q22b" name="q22 " [(ngModel)]="answers[21]" value="b" >
-                          <label for="q22b">&nbsp; creative about how to do my work.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                  </ol>
+          <section class="recipe-section myFont">
 
-                  <ol *ngIf="pageNumber==2" start="23">
-                    <li class="question">
-                      When I get directions to a new place, I prefer<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q23a" name="q23 " [(ngModel)]="answers[22]" value="a" >
-                          <label for="q23a">&nbsp; a map.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q23b" name="q23 " [(ngModel)]="answers[22]" value="b" >
-                          <label for="q23b">&nbsp; written directions.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I learn<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q24a" name="q24 " [(ngModel)]="answers[23]" value="a" >
-                          <label for="q24a">&nbsp; at a fairly regular pace. If I study hard, I'll
-                          &quot;get it.&quot;<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q24b" name="q24 " [(ngModel)]="answers[23]" value="b" >
-                          <label for="q24b">&nbsp; in fits and starts. I'll be totally confused and
-                          then suddenly it all &quot;clicks.&quot;</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I would rather first<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q25a" name="q25 " [(ngModel)]="answers[24]" value="a" >
-                          <label for="q25a">&nbsp; try things out.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q25b" name="q25 " [(ngModel)]="answers[24]" value="b" >
-                          <label for="q25b">&nbsp; think about how I'm going to do it.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When I am reading for enjoyment, I like writers to<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q26a" name="q26 " [(ngModel)]="answers[25]" value="a" >
-                          <label for="q26a">&nbsp; clearly say what they mean.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q26b" name="q26 " [(ngModel)]="answers[25]" value="b" >
-                          <label for="q26b">&nbsp; say things in creative, interesting ways.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When I see a diagram or sketch in class, I am most likely to remember<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q27a" name="q27 " [(ngModel)]="answers[26]" value="a" >
-                          <label for="q27a">&nbsp; the picture.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q27b" name="q27 " [(ngModel)]="answers[26]" value="b" >
-                          <label for="q27b">&nbsp; what the instructor said about it.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When considering a body of information, I am more likely to<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q28a" name="q28 " [(ngModel)]="answers[27]" value="a" >
-                          <label for="q28a">&nbsp; focus on details and miss the big picture.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q28b" name="q28 " [(ngModel)]="answers[27]" value="b" >
-                          <label for="q28b">&nbsp; try to understand the big picture before getting
-                          into the details.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I more easily remember<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q29a" name="q29 " [(ngModel)]="answers[28]" value="a" >
-                          <label for="q29a">&nbsp; something I have done.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q29b" name="q29 " [(ngModel)]="answers[28]" value="b" >
-                          <label for="q29b">&nbsp; something I have thought a lot about.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When I have to perform a task, I prefer to<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q30a" name="q30 " [(ngModel)]="answers[29]" value="a" >
-                          <label for="q30a">&nbsp; master one way of doing it.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q30b" name="q30 " [(ngModel)]="answers[29]" value="b" >
-                          <label for="q30b">&nbsp; come up with new ways of doing it.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When someone is showing me data, I prefer<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q31a" name="q31 " [(ngModel)]="answers[30]" value="a" >
-                          <label for="q31a">&nbsp; charts or graphs.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q31b" name="q31 " [(ngModel)]="answers[30]" value="b" >
-                          <label for="q31b">&nbsp; text summarizing the results.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When writing a paper, I am more likely to<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q32a" name="q32 " [(ngModel)]="answers[31]" value="a" >
-                          <label for="q32a">&nbsp; work on (think about or write) the beginning of the
-                          paper and progress forward.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q32b" name="q32 " [(ngModel)]="answers[31]" value="b" >
-                          <label for="q32b">&nbsp; work on (think about or write) different parts of
-                          the paper and then order them.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When I have to work on a group project, I first want to<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q33a" name="q33 " [(ngModel)]="answers[32]" value="a" >
-                          <label for="q33a">&nbsp; have &quot;group brainstorming&quot; where
-                          everyone contributes ideas.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q33b" name="q33 " [(ngModel)]="answers[32]" value="b" >
-                          <label for="q33b">&nbsp; brainstorm individually and then come together as
-                          a group to compare ideas.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                  </ol>
+            <div *ngIf="pageNumber==0">
+
+              <div class="recipe-section-title">
+                <h3>There is only 4 pages. Let's begin..</h3>
+              </div>
+              <div class="recipe-section-content maxWidth">
 
 
-                  <ol *ngIf="pageNumber==3" start="34">
-                    <li class="question">
-                      I consider it higher praise to call someone<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q34a" name="q34 " [(ngModel)]="answers[33]" value="a" >
-                          <label for="q34a">&nbsp; sensible.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q34b" name="q34 " [(ngModel)]="answers[33]" value="b" >
-                          <label for="q34b">&nbsp; imaginative.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When I meet people at a party, I am more likely to remember<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q35a" name="q35 " [(ngModel)]="answers[34]" value="a" >
-                          <label for="q35a">&nbsp; what they looked like.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q35b" name="q35 " [(ngModel)]="answers[34]" value="b" >
-                          <label for="q35b">&nbsp; what they said about themselves.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When I am learning a new subject, I prefer to<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q36a" name="q36 " [(ngModel)]="answers[35]" value="a" >
-                          <label for="q36a">&nbsp; stay focused on that subject, learning as much
-                          about it as I can.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q36b" name="q36 " [(ngModel)]="answers[35]" value="b" >
-                          <label for="q36b">&nbsp; try to make connections between that subject and
-                          related subjects.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I am more likely to be considered<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q37a" name="q37 " [(ngModel)]="answers[36]" value="a" >
-                          <label for="q37a">&nbsp; outgoing.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q37b" name="q37 " [(ngModel)]="answers[36]" value="b" >
-                          <label for="q37b">&nbsp; reserved.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I prefer courses that emphasize<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q38a" name="q38 " [(ngModel)]="answers[37]" value="a" >
-                          <label for="q38a">&nbsp; concrete material (facts, data).<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q38b" name="q38 " [(ngModel)]="answers[37]" value="b" >
-                          <label for="q38b">&nbsp; abstract material (concepts, theories).</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      For entertainment, I would rather<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q39a" name="q39 " [(ngModel)]="answers[38]" value="a" >
-                          <label for="q39a">&nbsp; watch television.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q39b" name="q39 " [(ngModel)]="answers[38]" value="b" >
-                          <label for="q39b">&nbsp; read a book.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      Some teachers start their lectures with an outline of what they will cover.
-                      Such outlines are<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q40a" name="q40 " [(ngModel)]="answers[39]" value="a" >
-                          <label for="q40a">&nbsp; somewhat helpful to me.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q40b" name="q40 " [(ngModel)]="answers[39]" value="b" >
-                          <label for="q40b">&nbsp; very helpful to me.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      The idea of doing homework in groups, with one grade for the entire group,<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q41a" name="q41 " [(ngModel)]="answers[40]" value="a" >
-                          <label for="q41a">&nbsp; appeals to me.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q41b" name="q41 " [(ngModel)]="answers[40]" value="b" >
-                          <label for="q41b">&nbsp; does not appeal to me.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When I am doing long calculations,<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q42a" name="q42 " [(ngModel)]="answers[41]" value="a" >
-                          <label for="q42a">&nbsp; I tend to repeat all my steps and check my work
-                          carefully.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q42b" name="q42 " [(ngModel)]="answers[41]" value="b" >
-                          <label for="q42b">&nbsp; I find checking my work tiresome and have to force
-                          myself to do it.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      I tend to picture places I have been<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q43a" name="q43 " [(ngModel)]="answers[42]" value="a" >
-                          <label for="q43a">&nbsp; easily and fairly accurately.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q43b" name="q43 " [(ngModel)]="answers[42]" value="b" >
-                          <label for="q43b">&nbsp; with difficulty and without much detail.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="question">
-                      When solving problems in a group, I would be more likely to<br />
-                      <ul class="regular">
-                        <li>
-                          <input type="radio" id="q44a" name="q44 " [(ngModel)]="answers[43]" value="a" >
-                          <label for="q44a">&nbsp; think of the steps in the solutions process.<br /></label>
-                          <div class="check"></div>
-                        </li>
-                        <li>
-                          <input type="radio" id="q44b" name="q44 " [(ngModel)]="answers[43]" value="b" >
-                          <label for="q44b">&nbsp; think of possible consequences or applications of
-                          the solution in a wide range of areas.</label>
-                          <div class="check"></div>
-                        </li>
-                      </ul>
-                    </li>
-                  </ol>
-
-
-
-                  <dl>
-                      <dt></dt>
-                      <dd>
-                        <input type="hidden" value="1" name="validate">
-                        <input *ngIf="pageNumber>0" type="button" name="back" value="Back" class="nextBtn" (click)="navigate(0)">
-                        <input *ngIf="3>pageNumber" type="button" name="next" value="Next" class="nextBtn" (click)="navigate(1)">
-                        <input *ngIf="pageNumber==3" type="button" name="next" value="Check" class="nextBtn" (click)="checkScore()">
-                      </dd>
-                    </dl>
-                </div>
+                <ol>
+                  <li class="question">
+                    I understand something better after I
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q1a" name="q1" [(ngModel)]="answers[0]" value="a">
+                        <label for="q1a">&nbsp; try it out.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q1b" name="q1" [(ngModel)]="answers[0]" value="b">
+                        <label for="q1b">&nbsp; think it through.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I would rather be considered
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q2a" name="q2" [(ngModel)]="answers[1]" value="a">
+                        <label for="q2a">&nbsp; realistic.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q2b" name="q2" [(ngModel)]="answers[1]" value="b">
+                        <label for="q2b">&nbsp; innovative.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When I think about what I did yesterday, I am most likely to get
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q3a" name="q3" [(ngModel)]="answers[2]" value="a">
+                        <label for="q3a">&nbsp; a picture.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q3b" name="q3" [(ngModel)]="answers[2]" value="b">
+                        <label for="q3b">&nbsp; words.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I tend to
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q4a" name="q4" [(ngModel)]="answers[3]" value="a">
+                        <label for="q4a">&nbsp; understand details of a subject but may be fuzzy about its overall structure.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q4b" name="q4" [(ngModel)]="answers[3]" value="b">
+                        <label for="q4b">&nbsp; understand the overall structure but may be fuzzy about details.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When I am learning something new, it helps me to
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q5a" name="q5" [(ngModel)]="answers[4]" value="a">
+                        <label for="q5a">&nbsp; talk about it.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q5b" name="q5" [(ngModel)]="answers[4]" value="b">
+                        <label for="q5b">&nbsp; think about it.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    If I were a teacher, I would rather teach a course
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q6a" name="q6" [(ngModel)]="answers[5]" value="a">
+                        <label for="q6a">&nbsp; that deals with facts and real life situations.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q6b" name="q6" [(ngModel)]="answers[5]" value="b">
+                        <label for="q6b">&nbsp; that deals with ideas and theories.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I prefer to get new information in
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q7a" name="q7" [(ngModel)]="answers[6]" value="a">
+                        <label for="q7a">&nbsp; pictures, diagrams, graphs, or maps.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q7b" name="q7" [(ngModel)]="answers[6]" value="b">
+                        <label for="q7b">&nbsp; written directions or verbal information.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    Once I understand
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q8a" name="q8" [(ngModel)]="answers[7]" value="a">
+                        <label for="q8a">&nbsp; all the parts, I understand the whole thing.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q8b" name="q8" [(ngModel)]="answers[7]" value="b">
+                        <label for="q8b">&nbsp; the whole thing, I see how the parts fit.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    In a study group working on difficult material, I am more likely to
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q9a" name="q9" [(ngModel)]="answers[8]" value="a">
+                        <label for="q9a">&nbsp; jump in and contribute ideas.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q9b" name="q9" [(ngModel)]="answers[8]" value="b">
+                        <label for="q9b">&nbsp; sit back and listen.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I find it easier
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q10a" name="q10 " [(ngModel)]="answers[9]" value="a">
+                        <label for="q10a">&nbsp; to learn facts.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q10b" name="q10 " [(ngModel)]="answers[9]" value="b">
+                        <label for="q10b">&nbsp; to learn concepts.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    In a book with lots of pictures and charts, I am likely to
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q11a" name="q11 " [(ngModel)]="answers[10]" value="a">
+                        <label for="q11a">&nbsp; look over the pictures and charts carefully.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q11b" name="q11 " [(ngModel)]="answers[10]" value="b">
+                        <label for="q11b">&nbsp; focus on the written text.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
               </div>
             </div>
+
+            <div *ngIf="pageNumber==1">
+
+              <div class="recipe-section-title">
+                <h3>Wonderful! Only 3 more to go.</h3>
+              </div>
+              <div class="recipe-section-content maxWidth">
+
+
+                <ol start="12">
+
+                  <li class="question">
+                    When I solve math problems
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q12a" name="q12 " [(ngModel)]="answers[11]" value="a">
+                        <label for="q12a">&nbsp; I usually work my way to the solutions one step at a time.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q12b" name="q12 " [(ngModel)]="answers[11]" value="b">
+                        <label for="q12b">&nbsp; I often just see the solutions but then have to struggle to figure out the steps to get to
+                          them.
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    In classes I have taken
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q13a" name="q13 " [(ngModel)]="answers[12]" value="a">
+                        <label for="q13a">&nbsp; I have usually gotten to know many of the students.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q13b" name="q13 " [(ngModel)]="answers[12]" value="b">
+                        <label for="q13b">&nbsp; I have rarely gotten to know many of the students.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    In reading nonfiction, I prefer
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q14a" name="q14 " [(ngModel)]="answers[13]" value="a">
+                        <label for="q14a">&nbsp; something that teaches me new facts or tells me how to do something.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q14b" name="q14 " [(ngModel)]="answers[13]" value="b">
+                        <label for="q14b">&nbsp; something that gives me new ideas to think about.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I like teachers
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q15a" name="q15 " [(ngModel)]="answers[14]" value="a">
+                        <label for="q15a">&nbsp; who put a lot of diagrams on the board.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q15b" name="q15 " [(ngModel)]="answers[14]" value="b">
+                        <label for="q15b">&nbsp; who spend a lot of time explaining.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When I'm analyzing a story or a novel
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q16a" name="q16 " [(ngModel)]="answers[15]" value="a">
+                        <label for="q16a">&nbsp; I think of the incidents and try to put them together to figure out the themes.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q16b" name="q16 " [(ngModel)]="answers[15]" value="b">
+                        <label for="q16b">&nbsp; I just know what the themes are when I finish reading and then I have to go back and find
+                          the incidents that demonstrate them.
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When I start a homework problem, I am more likely to
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q17a" name="q17 " [(ngModel)]="answers[16]" value="a">
+                        <label for="q17a">&nbsp; start working on the solution immediately.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q17b" name="q17 " [(ngModel)]="answers[16]" value="b">
+                        <label for="q17b">&nbsp; try to fully understand the problem first.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I prefer the idea of
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q18a" name="q18 " [(ngModel)]="answers[17]" value="a">
+                        <label for="q18a">&nbsp; certainty.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q18b" name="q18 " [(ngModel)]="answers[17]" value="b">
+                        <label for="q18b">&nbsp; theory.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I remember best
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q19a" name="q19 " [(ngModel)]="answers[18]" value="a">
+                        <label for="q19a">&nbsp; what I see.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q19b" name="q19 " [(ngModel)]="answers[18]" value="b">
+                        <label for="q19b">&nbsp; what I hear.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    It is more important to me that an instructor
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q20a" name="q20 " [(ngModel)]="answers[19]" value="a">
+                        <label for="q20a">&nbsp; lay out the material in clear sequential steps.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q20b" name="q20 " [(ngModel)]="answers[19]" value="b">
+                        <label for="q20b">&nbsp; give me an overall picture and relate the material to other subjects.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I prefer to study
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q21a" name="q21 " [(ngModel)]="answers[20]" value="a">
+                        <label for="q21a">&nbsp; in a study group.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q21b" name="q21 " [(ngModel)]="answers[20]" value="b">
+                        <label for="q21b">&nbsp; alone.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I am more likely to be considered
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q22a" name="q22 " [(ngModel)]="answers[21]" value="a">
+                        <label for="q22a">&nbsp; careful about the details of my work.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q22b" name="q22 " [(ngModel)]="answers[21]" value="b">
+                        <label for="q22b">&nbsp; creative about how to do my work.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div *ngIf="pageNumber==2">
+
+              <div class="recipe-section-title">
+                <h3>You are almost there.</h3>
+              </div>
+              <div class="recipe-section-content maxWidth">
+
+                <ol start="23">
+
+                  <li class="question">
+                    When I get directions to a new place, I prefer
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q23a" name="q23 " [(ngModel)]="answers[22]" value="a">
+                        <label for="q23a">&nbsp; a map.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q23b" name="q23 " [(ngModel)]="answers[22]" value="b">
+                        <label for="q23b">&nbsp; written directions.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I learn
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q24a" name="q24 " [(ngModel)]="answers[23]" value="a">
+                        <label for="q24a">&nbsp; at a fairly regular pace. If I study hard, I'll &quot;get it.&quot;
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q24b" name="q24 " [(ngModel)]="answers[23]" value="b">
+                        <label for="q24b">&nbsp; in fits and starts. I'll be totally confused and then suddenly it all &quot;clicks.&quot;</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I would rather first
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q25a" name="q25 " [(ngModel)]="answers[24]" value="a">
+                        <label for="q25a">&nbsp; try things out.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q25b" name="q25 " [(ngModel)]="answers[24]" value="b">
+                        <label for="q25b">&nbsp; think about how I'm going to do it.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When I am reading for enjoyment, I like writers to
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q26a" name="q26 " [(ngModel)]="answers[25]" value="a">
+                        <label for="q26a">&nbsp; clearly say what they mean.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q26b" name="q26 " [(ngModel)]="answers[25]" value="b">
+                        <label for="q26b">&nbsp; say things in creative, interesting ways.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When I see a diagram or sketch in class, I am most likely to remember
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q27a" name="q27 " [(ngModel)]="answers[26]" value="a">
+                        <label for="q27a">&nbsp; the picture.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q27b" name="q27 " [(ngModel)]="answers[26]" value="b">
+                        <label for="q27b">&nbsp; what the instructor said about it.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When considering a body of information, I am more likely to
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q28a" name="q28 " [(ngModel)]="answers[27]" value="a">
+                        <label for="q28a">&nbsp; focus on details and miss the big picture.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q28b" name="q28 " [(ngModel)]="answers[27]" value="b">
+                        <label for="q28b">&nbsp; try to understand the big picture before getting into the details.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I more easily remember
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q29a" name="q29 " [(ngModel)]="answers[28]" value="a">
+                        <label for="q29a">&nbsp; something I have done.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q29b" name="q29 " [(ngModel)]="answers[28]" value="b">
+                        <label for="q29b">&nbsp; something I have thought a lot about.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When I have to perform a task, I prefer to
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q30a" name="q30 " [(ngModel)]="answers[29]" value="a">
+                        <label for="q30a">&nbsp; master one way of doing it.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q30b" name="q30 " [(ngModel)]="answers[29]" value="b">
+                        <label for="q30b">&nbsp; come up with new ways of doing it.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When someone is showing me data, I prefer
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q31a" name="q31 " [(ngModel)]="answers[30]" value="a">
+                        <label for="q31a">&nbsp; charts or graphs.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q31b" name="q31 " [(ngModel)]="answers[30]" value="b">
+                        <label for="q31b">&nbsp; text summarizing the results.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When writing a paper, I am more likely to
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q32a" name="q32 " [(ngModel)]="answers[31]" value="a">
+                        <label for="q32a">&nbsp; work on (think about or write) the beginning of the paper and progress forward.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q32b" name="q32 " [(ngModel)]="answers[31]" value="b">
+                        <label for="q32b">&nbsp; work on (think about or write) different parts of the paper and then order them.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When I have to work on a group project, I first want to
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q33a" name="q33 " [(ngModel)]="answers[32]" value="a">
+                        <label for="q33a">&nbsp; have &quot;group brainstorming&quot; where everyone contributes ideas.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q33b" name="q33 " [(ngModel)]="answers[32]" value="b">
+                        <label for="q33b">&nbsp; brainstorm individually and then come together as a group to compare ideas.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div *ngIf="pageNumber==3">
+
+              <div class="recipe-section-title">
+                <h3>This is it. Let's find out your learning style.</h3>
+              </div>
+              <div class="recipe-section-content maxWidth">
+
+
+
+                <ol start="34">
+
+                  <li class="question">
+                    I consider it higher praise to call someone
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q34a" name="q34 " [(ngModel)]="answers[33]" value="a">
+                        <label for="q34a">&nbsp; sensible.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q34b" name="q34 " [(ngModel)]="answers[33]" value="b">
+                        <label for="q34b">&nbsp; imaginative.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When I meet people at a party, I am more likely to remember
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q35a" name="q35 " [(ngModel)]="answers[34]" value="a">
+                        <label for="q35a">&nbsp; what they looked like.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q35b" name="q35 " [(ngModel)]="answers[34]" value="b">
+                        <label for="q35b">&nbsp; what they said about themselves.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When I am learning a new subject, I prefer to
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q36a" name="q36 " [(ngModel)]="answers[35]" value="a">
+                        <label for="q36a">&nbsp; stay focused on that subject, learning as much about it as I can.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q36b" name="q36 " [(ngModel)]="answers[35]" value="b">
+                        <label for="q36b">&nbsp; try to make connections between that subject and related subjects.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I am more likely to be considered
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q37a" name="q37 " [(ngModel)]="answers[36]" value="a">
+                        <label for="q37a">&nbsp; outgoing.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q37b" name="q37 " [(ngModel)]="answers[36]" value="b">
+                        <label for="q37b">&nbsp; reserved.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I prefer courses that emphasize
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q38a" name="q38 " [(ngModel)]="answers[37]" value="a">
+                        <label for="q38a">&nbsp; concrete material (facts, data).
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q38b" name="q38 " [(ngModel)]="answers[37]" value="b">
+                        <label for="q38b">&nbsp; abstract material (concepts, theories).</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    For entertainment, I would rather
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q39a" name="q39 " [(ngModel)]="answers[38]" value="a">
+                        <label for="q39a">&nbsp; watch television.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q39b" name="q39 " [(ngModel)]="answers[38]" value="b">
+                        <label for="q39b">&nbsp; read a book.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    Some teachers start their lectures with an outline of what they will cover. Such outlines are
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q40a" name="q40 " [(ngModel)]="answers[39]" value="a">
+                        <label for="q40a">&nbsp; somewhat helpful to me.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q40b" name="q40 " [(ngModel)]="answers[39]" value="b">
+                        <label for="q40b">&nbsp; very helpful to me.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    The idea of doing homework in groups, with one grade for the entire group,
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q41a" name="q41 " [(ngModel)]="answers[40]" value="a">
+                        <label for="q41a">&nbsp; appeals to me.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q41b" name="q41 " [(ngModel)]="answers[40]" value="b">
+                        <label for="q41b">&nbsp; does not appeal to me.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When I am doing long calculations,
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q42a" name="q42 " [(ngModel)]="answers[41]" value="a">
+                        <label for="q42a">&nbsp; I tend to repeat all my steps and check my work carefully.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q42b" name="q42 " [(ngModel)]="answers[41]" value="b">
+                        <label for="q42b">&nbsp; I find checking my work tiresome and have to force myself to do it.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    I tend to picture places I have been
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q43a" name="q43 " [(ngModel)]="answers[42]" value="a">
+                        <label for="q43a">&nbsp; easily and fairly accurately.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q43b" name="q43 " [(ngModel)]="answers[42]" value="b">
+                        <label for="q43b">&nbsp; with difficulty and without much detail.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="question">
+                    When solving problems in a group, I would be more likely to
+                    <br />
+                    <ul class="regular">
+                      <li>
+                        <input type="radio" id="q44a" name="q44 " [(ngModel)]="answers[43]" value="a">
+                        <label for="q44a">&nbsp; think of the steps in the solutions process.
+                          <br />
+                        </label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="q44b" name="q44 " [(ngModel)]="answers[43]" value="b">
+                        <label for="q44b">&nbsp; think of possible consequences or applications of the solution in a wide range of areas.</label>
+                        <div class="check"></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <dl>
+              <dd>
+                <input type="hidden" value="1" name="validate">
+                <button *ngIf="pageNumber>0" type="button" name="back" value="Back" class="btn nextBtn" (click)="navigate(0)">Back</button>
+                <button *ngIf="3>pageNumber" type="button" name="next" value="Next" class="btn nextBtn" (click)="navigate(1)">Next</button>
+                <button *ngIf="pageNumber==3" type="button" name="next" value="Check" class="btn nextBtn" (click)="checkScore()">Check</button>
+              </dd>
+            </dl>
           </section>
-        
+
         </div>
         <div id="recipe-apply-now" class="hide-on-mobile">
           <div id="recipe-apply-now-fruit" style="background-image: url(../../assets/smartowl1.jpg)"></div>
@@ -762,22 +901,68 @@
 
         </div>
         <div id="recipe-share-box">
-          <ul class="clearfix">
-            <li id="share-fb" class = "learnerStyleBox"  > Active/Reflective Learner
-              <!-- <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://makers.lemonade.com?position=1197"></a> -->
+          <ul class="clearfix pointer">
+            <li id="info-btn-A" (click)="toggle_info('A')" class="learnerStyleBox doc-link"> Active/Reflective Learner
+
             </li>
-            <li id="share-linkdin" class = "learnerStyleBox" >Sensing/ Intutive Learner
-              <!-- <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://makers.lemonade.com?position=1197&amp;title=Frontend Developer&amp;summary=&amp;source=">Verbal</a> -->
+            <div class="info doc-panel" id="info-panel-A">
+              <b>Active</b>
+              <span>learners learn by doing something with information. They prefer to process information by talking about it
+                and trying it out.</span>
+
+              <b>Reflective</b>
+              <span>learners learn by thinking about information. They prefer to think things through and understand things before
+                acting.</span>
+
+            </div>
+            <li id="info-btn-B" (click)="toggle_info('B')" class="learnerStyleBox doc-link">Sensing/ Intutive Learner
+
             </li>
-            <li id="share-twitter" class = "learnerStyleBox" >Visual/Verbal Learner
-              <!-- <a href="https://twitter.com/intent/tweet?text=Frontend Developer&amp;url=https://makers.lemonade.com?position=1197"></a> -->
+            <div class="info doc-panel" id="info-panel-B">
+              <b>Sensing</b>
+              <span>learners prefer to take in information that is concrete and practical. They are oriented towards details, facts,
+                and figures and prefer to use proven procedures. They are realistic and like practical applications.</span>
+
+              <b>Intuitive</b>
+              <span>learners prefer to take in information that is abstract, original, and oriented towards theory. They look at
+                the big picture and try to grasp overall patterns. They like discovering possibilities and relationships
+                and working with ideas.</span>
+
+            </div>
+            <li id="info-btn-C" (click)="toggle_info('C')" class="learnerStyleBox doc-link">Visual/Verbal Learner
+
             </li>
-            <li id="share-twitter" class = "learnerStyleBox">Sequential/Global Learner
-                <!-- <a href="https://twitter.com/intent/tweet?text=Frontend Developer&amp;url=https://makers.lemonade.com?position=1197"></a> -->
-              </li>
+            <div class="info doc-panel" id="info-panel-C">
+              <b>Visual</b>
+              <span>learners prefer visual presentations of material – diagrams, charts, graphs, pictures.</span>
+
+              <b>Verbal</b>
+              <span>learners prefer explanations with words – both written and spoken.</span>
+
+            </div>
+            <li id="info-btn-D" (click)="toggle_info('D')" class="learnerStyleBox doc-link">Sequential/Global Learner
+
+            </li>
+            <div class="info doc-panel" id="info-panel-D">
+              <b>Sequential</b>
+              <span>learners prefer to organize information in a linear, orderly fashion. They learn in logically sequenced steps
+                and work with information in an organized and systematic way.</span>
+
+              <b>Global</b>
+              <span>learners prefer to organize information more holistically and in a seemingly random manner without seeing connections.
+                They often appear scattered and disorganised in their thinking yet often arrive at a creative or correct
+                end product.</span>
+
+            </div>
           </ul>
         </div>
+        <div class="recipe-meta">
+          <h2>Your response data and learning style profile are not stored or sent to anyone other than you. They cannot be recovered
+            once you have submitted the completed form and received the results.</h2>
+        </div>
       </div>
+
+
     </article>
     <div id="mobile-application" class="hide-on-desktop hide-on-tablet">
       <form action="https://makers.lemonade.com/job-application/" method="post">
