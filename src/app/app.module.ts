@@ -13,6 +13,7 @@ import {ProfileComponent } from './profile/profile.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { StorageServiceModule} from 'angular-webstorage-service';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { LogInComponent } from './log-in/log-in.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    StorageServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

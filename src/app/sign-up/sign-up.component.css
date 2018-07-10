@@ -130,5 +130,31 @@ body {
 	color: white;
 }
 
+.content{
+	width: 100% !important;
+	margin: 0px !important;
+	font-size: 12px !important;
+}
 
+.hmax{
+	height: 600px;
+}
 
+.mt100{
+	margin-top: 150px !important;
+}
+
+.warning{
+	font-size: 13px;
+    color: #f67e7e;
+	position: absolute;
+	margin-left: 20%;
+}
+
+.mt25{
+	margin-top: 25px !important;
+}
+
+.n25{
+	margin-left: -25% !important;
+}

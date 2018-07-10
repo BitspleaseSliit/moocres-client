@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Inject, Component, OnInit } from '@angular/core';
+import { LOCAL_STORAGE, WebStorageService } from 'angular-webstorage-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
 
+  authTrue = false;
   ngOnInit() {
+    if (this.storage.get('user').status === true) {
+      this.authTrue = true;
+    }
+  }
+
+  logOut() {
+    const user = this.storage.get('user');
+    user.status = false;
+    this.storage.set('user', user);
+    window.location.href = '/login';
   }
 
 }

@@ -1,0 +1,22 @@
+.signup {
+    font-size: 13px !important;
+    border: 1px solid #FF952D;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-weight: bold;
+    width: 130px !important;
+    margin-left: 20px;
+    text-align: center;
+    padding: 6px;
+}
+
+
+.signup{
+    cursor: pointer;
+}
+.signup a{
+    color: #ffa54c !important;
+    text-decoration: none !important;
+}
+

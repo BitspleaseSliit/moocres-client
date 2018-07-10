@@ -33,6 +33,8 @@ export class LearnerstylesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $('html,body').animate({ scrollTop: '0px' }, 'slow');
+
   }
 
   private calculateing() {

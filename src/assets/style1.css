@@ -1778,11 +1778,11 @@ button {
     font-size: 18px;
 }
 
-a {
+/* a {
     text-decoration: none;
     font-size: 22px;
-    color: FF952D;
-}
+    color: #FF952D;
+} */
 
 button:hover, a:hover {
     opacity: 0.7;

@@ -1,3 +1,14 @@
-<p>
-  log-in works!
-</p>
+<div class="hmax">
+    <!-- multistep form -->
+    <form id="msform" class="mt100">
+     
+      <!-- fieldsets -->
+      <fieldset class="content">
+        <h2 class="fs-title">Log in to your profile</h2>
+        <input type="text" name="email" [(ngModel)]="profile.email" placeholder="Email" />
+        <input type="password" name="pass" [(ngModel)]="profile.password" placeholder="Password" />
+        <span class="warning n25" *ngIf="invalid">Password or Username is not correct</span>
+        <input type="button" name="signup" class="next mt25 action-button" value="Log In" (click)="logIn()"/>
+      </fieldset>
+    </form>
+    </div>

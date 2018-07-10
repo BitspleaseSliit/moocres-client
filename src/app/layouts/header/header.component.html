@@ -2,16 +2,16 @@
   <a href="#" id="mobile-menu-close"></a>
   <div class="menu-container clearfix">
     <ul id="primary-menu" class="clearfix">
-     
+
       <li id="menu-item-151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-151">
         <a href="/learnerstyles">Learning Style</a>
       </li>
       <li id="menu-item-155" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-155">
         <a href="/bestcourses">Best Courses</a>
       </li>
-      <li id="menu-item-156" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156">
+      <!-- <li id="menu-item-156" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156">
         <a href="/contact-us">Contact Us</a>
-      </li>
+      </li> -->
     </ul>
   </div>
   <div id="footer-social">
@@ -37,34 +37,49 @@
       <div class="menu-container clearfix">
         <ul id="desktop-menu" class="clearfix">
           
-          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-151">
-            <a href="/learnerstyles">Learning Style</a>
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-155">
+            <a routerLink="/">MOOCRec</a>
           </li>
           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-155">
-            <a href="/bestcourses">Best Courses</a>
+            <a routerLink="/bestcourses">Matching Courses</a>
+          </li>
+          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-151">
+            <a routerLink="/learnerstyles">Learning Style</a>
+          </li>
+          <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156">
+            <a routerLink="/contact-us">Contact Us</a>
+          </li> -->
+          <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156">
+            <a routerLink="/signup">Sign Up</a>
           </li>
           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156">
-            <a href="/contact-us">Contact Us</a>
-          </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156">
-            <a href="/signup">Sign Up</a>
-          </li>
-          <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156">
-            <a href="/login">Log In</a>
-          </li>
+            <a routerLink="/login">Log In</a>
+          </li> -->
 
         </ul>
-        
+
       </div>
     </div>
   </div>
   <div id="logo" class="">
-    <a data-track="home_logo_clicked" href="/home"></a>
+    <a data-track="home_logo_clicked" routerLink="/home"></a>
   </div>
   <div id="header-action-button" class="hide-on-device">
-    <a data-track="menu_check_prices" href="/bestcourses">Find Courses</a>
+    <a data-track="menu_check_prices" routerLink="/bestcourses">Find Courses</a>
   </div>
   <div id="header-action-button" class="hide-on-desktop">
-    <a data-track="menu_check_prices" href="/bestcourses">Courses</a>
+    <a data-track="menu_check_prices" routerLink="/bestcourses">Courses</a>
+  </div>
+  <div *ngIf="!authTrue" routerLink="/signup" class="signup">
+    <a >Sign Up</a>
+  </div>
+  <div *ngIf="!authTrue" routerLink="/login" class="signup">
+    <a >Log In</a>
+  </div>
+  <div *ngIf="authTrue" routerLink="/profile" class="signup">
+    <a >Profile</a>
+  </div>
+  <div *ngIf="authTrue" routerLink="/login" class="signup" (click)="logOut()">
+    <a >Log Out</a>
   </div>
 </header>

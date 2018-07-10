@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Inject, Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+import { LOCAL_STORAGE, WebStorageService } from 'angular-webstorage-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogInComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
 
+  public profile = {
+    email: '',
+    password: ''
+  };
+  invalid = false;
+  userData: any;
   ngOnInit() {
+    $('html,body').animate({ scrollTop: '0px' }, 'slow');
+    this.userData = this.storage.get('user');
+    console.log('session data', this.storage.get('user'));
   }
 
+  logIn() {
+    if (this.userData.email === this.profile.email && this.userData.password === this.profile.password) {
+      this.userData.status = true;
+      this.storage.set('user', this.userData);
+      // this.router.navigateByUrl('/profile');
+      window.location.href = '/profile';
+    } else {
+      this.invalid = true;
+    }
+  }
 }
