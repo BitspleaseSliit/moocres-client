@@ -15,7 +15,8 @@ export class SignUpComponent implements OnInit {
     name: '',
     email: '',
     password: '',
-    status: false
+    status: false,
+    style: 'Not found yet'
   };
   checkPass: '';
   invalid = false;

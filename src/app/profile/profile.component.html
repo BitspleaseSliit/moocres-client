@@ -1,42 +1,65 @@
-<!-- Add icon library -->
-<div class="recipe-header">
-    <div id="go-back" class="hide-on-mobile">
-      <a href="https://makers.lemonade.com" title="Back">Go Back</a>
-    </div>
-    <div id="recipe-apply-now-fruit" class="hide-on-desktop hide-on-tablet" style="background-image: url(https://lmnd-makers.s3.amazonaws.com/uploads/2018/03/Onion.png)"></div>
-    <!-- <h1 class="recipe-title">Find your Learning Style</h1> -->
-    <div class="recipe-meta">
-      <!-- <h2>Index of Learning Styles Questionnaire </h2>
-      <h2>Your response data and learning style profile are not stored or sent to anyone other than you. They cannot be recovered
-        once you have submitted the completed form and received the results.</h2> -->
-    </div>
+<div class="row col-md-12">
+
+  <div class="card col-md-2 ml50 mr75 p15 m">
+    <img src="assets/profile/user.jpg" alt="John" style="width:100%">
+    <p>
+      <button>Change photo</button>
+    </p>
+    <h1>{{user.name}}</h1>
+    <p class="title">Learning Style: {{user.style}}</p>
+    <a *ngIf="!user.style || user.style=='Not found yet'" routerLink="/learnerstyles">Find now</a>
+    <p>{{user.email}}</p>
+    <a routerLink="">Change Password</a>
   </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="card">
-  <img src="../../assets/coursera.png" alt="John" style="width:100%">
-  <h1>John Doe</h1>
-  <p class="title">CEO and Founder, Example</p>
-  <p>Harvard University</p>
-  <a href="#"><i class="fa fa-dribbble"></i></a> 
-  <a href="#"><i class="fa fa-twitter"></i></a> 
-  <a href="#"><i class="fa fa-linkedin"></i></a> 
-  <a href="#"><i class="fa fa-facebook"></i></a> 
-  <p><button>Edit</button></p>
-</div>
-<section class="hp-section">
-    <div class="container">
-      <h2 class="section-title">Best Recommended Moocs fits for you</h2>
-      <div class="subtitle">
-        <p>We're looking for people who love innovation, playing with AI, and challenging
-          <br /> the status quo as much as we do. We’re all about creative, self-starting leaders who
-          <br /> are excited by the thought of changing an entire industry for the better.</p>
-          <div class ="hide-on-device" class="home-action-button">                
-              <a data-track="menu_check_prices" href="https://www.lemonade.com/start?f=1">Find Now</a>
+  <section class="mb50 col-md-10">
+    <h2 class="section-title mb40">Best Recommended Moocs fits for you</h2>
+    <div *ngIf="user.style == 'Not found yet'"><h2>We could not find your learning style. Please take the questionnaire to find out your own learning style. </h2></div>
+      <div *ngIf="!(user.style=='Not found yet')" class="row col-md-12">
+
+      <div class="col-md-4 recipe-box" data-id="1197">
+        <div>
+          <a href="/bestcourses" title="Frontend Developer">
+            <div class="recipe-box-fruit" style="background-image: url(./assets/coursera-card.png)"></div>
+            <h3 class="recipe-box-title">Android App Development</h3>
+            <div class="recipe-box-location">
+              <p>Vanderbilt University</p>
             </div>
-        <div class="app-sketch1"></div>
-        <br/>
-
+            <div class="recipe-box-link">
+              View Course
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 recipe-box" data-id="181">
+        <div>
+          <a href="/bestcourses" title="Senior Backend Developer">
+            <div class="recipe-box-fruit" style="background-image: url(./assets/futureLearn.png)"></div>
+            <h3 class="recipe-box-title">Neural networks and Deep Learning</h3>
+            <div class="recipe-box-location">
+              <p>deeplearning.ai</p>
+            </div>
+            <div class="recipe-box-link">
+              view course
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 recipe-box" data-id="3047">
+        <div>
+          <a href="/bestcourses" title="Claims Experience Adjuster (Property)">
+            <div class="recipe-box-fruit" style="background-image: url(./assets/edxLogo.png)"></div>
+            <h3 class="recipe-box-title">Blockchain</h3>
+            <div class="recipe-box-location">
+              <p>The State University of New York</p>
+            </div>
+            <div class="recipe-box-link">
+              view course
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
+
+</div>

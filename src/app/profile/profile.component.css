@@ -1,0 +1,28 @@
+.center {
+    text-align: center;
+}
+
+.mb50{
+    margin-bottom: 50px;
+}
+
+.ml50{
+    margin-left: -10%;
+}
+
+.mr75{
+    margin-right: 75px;
+}
+
+.p15{
+    padding: 15px;
+}
+
+.m{
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+.mb40{
+    margin-bottom: 70px !important;
+}

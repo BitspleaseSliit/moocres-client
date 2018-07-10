@@ -11,11 +11,13 @@ export class ProfileComponent implements OnInit {
 
   constructor(private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
   authTrue = false;
+  public user: any;
   ngOnInit() {
     console.log('userprofile', this.storage.get('user'));
     $('html,body').animate({ scrollTop: '0px' }, 'slow');
-    if (this.storage.get('user') !== null) {
-      if (this.storage.get('user').status === true) {
+    this.user = this.storage.get('user');
+    if (this.user !== null) {
+      if (this.user.status === true) {
         this.authTrue = true;
       } else {
         this.router.navigateByUrl('/signup');
