@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Inject, Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { LOCAL_STORAGE, WebStorageService } from 'angular-webstorage-service';
+
 @Component({
   selector: 'app-learnerstyles',
   templateUrl: './learnerstyles.component.html',
@@ -28,9 +30,11 @@ export class LearnerstylesComponent implements OnInit {
   dim3 = '';
   dim4 = '';
 
+  learingStyle: any;
+
   pageNumber = 0;
   check = false;
-  constructor() { }
+  constructor( @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
 
   ngOnInit() {
     $('html,body').animate({ scrollTop: '0px' }, 'slow');
@@ -116,7 +120,10 @@ export class LearnerstylesComponent implements OnInit {
   checkScore() {
     this.calculateing();
     this.check = true;
-
+    this.learingStyle = this.dim1 + '/' + this.dim2 + '/' + this.dim3 + '/' + this.dim4;
+    const user = this.storage.get('user');
+    user.style = this.learingStyle;
+    this.storage.set('user', user);
     console.log(this.dim1);
     console.log(this.dim2);
     console.log(this.dim3);

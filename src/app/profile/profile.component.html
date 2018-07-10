@@ -14,8 +14,13 @@
 
   <section class="mb50 col-md-10">
     <h2 class="section-title mb40">Best Recommended Moocs fits for you</h2>
-    <div *ngIf="user.style == 'Not found yet'"><h2>We could not find your learning style. Please take the questionnaire to find out your own learning style. </h2></div>
-      <div *ngIf="!(user.style=='Not found yet')" class="row col-md-12">
+    <div *ngIf="user.style == 'Not found yet'">
+      <h2>We could not find your learning style. Please take the questionnaire to find out your own learning style. </h2>
+      <div class="home-action-button title-button center">
+        <a routerLink="/learnerstyles" style="font-size:20px">Find Your Learning Style Now</a>
+      </div>
+    </div>
+    <div *ngIf="!(user.style=='Not found yet')" class="row col-md-12">
 
       <div class="col-md-4 recipe-box" data-id="1197">
         <div>

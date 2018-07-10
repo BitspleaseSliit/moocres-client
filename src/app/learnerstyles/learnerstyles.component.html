@@ -20,7 +20,7 @@
 
           <section class="recipe-section myFont">
 
-            <div *ngIf="pageNumber==0">
+            <div *ngIf="!check && pageNumber==0">
 
               <div class="recipe-section-title">
                 <h3>There is only 4 pages. Let's begin..</h3>
@@ -231,7 +231,7 @@
               </div>
             </div>
 
-            <div *ngIf="pageNumber==1">
+            <div *ngIf="!check && pageNumber==1">
 
               <div class="recipe-section-title">
                 <h3>Wonderful! Only 3 more to go.</h3>
@@ -447,7 +447,7 @@
               </div>
             </div>
 
-            <div *ngIf="pageNumber==2">
+            <div *ngIf="!check && pageNumber==2">
 
               <div class="recipe-section-title">
                 <h3>You are almost there.</h3>
@@ -658,7 +658,7 @@
               </div>
             </div>
 
-            <div *ngIf="pageNumber==3">
+            <div *ngIf="!check && pageNumber==3">
 
               <div class="recipe-section-title">
                 <h3>This is it. Let's find out your learning style.</h3>
@@ -870,12 +870,25 @@
                 </ol>
               </div>
             </div>
+
+            <div *ngIf="check">
+              <div class="recipe-section-title">
+                <h3>Congratulations!</h3>
+              </div>
+              <div class="recipe-section-content maxWidth">
+                <h2>You are a {{learingStyle}} Learner</h2>
+              </div>
+              <div class="home-action-button title-button center">
+                  <a routerLink="/profile" style="font-size:20px">Check out courses fits for you</a>
+                </div>
+            </div>
+
             <dl>
               <dd>
                 <input type="hidden" value="1" name="validate">
-                <button *ngIf="pageNumber>0" type="button" name="back" value="Back" class="btn nextBtn" (click)="navigate(0)">Back</button>
-                <button *ngIf="3>pageNumber" type="button" name="next" value="Next" class="btn nextBtn" (click)="navigate(1)">Next</button>
-                <button *ngIf="pageNumber==3" type="button" name="next" value="Check" class="btn nextBtn" (click)="checkScore()">Check</button>
+                <button *ngIf="!check && pageNumber>0" type="button" name="back" value="Back" class="btn nextBtn" (click)="navigate(0)">Back</button>
+                <button *ngIf="!check && 3>pageNumber" type="button" name="next" value="Next" class="btn nextBtn" (click)="navigate(1)">Next</button>
+                <button *ngIf="!check && pageNumber==3" type="button" name="next" value="Check" class="btn nextBtn" (click)="checkScore()">Check</button>
               </dd>
             </dl>
           </section>
@@ -884,7 +897,7 @@
         <div id="recipe-apply-now" class="hide-on-mobile">
           <div id="recipe-apply-now-fruit" style="background-image: url(../../assets/smartowl1.jpg)"></div>
           <!-- <a data-fancybox data-src="#application-form" href="javascript:;" class="button">Check Score</a> -->
-          <ul *ngIf="check">
+          <!-- <ul *ngIf="check">
             <li>
               {{dim1}}
             </li>
@@ -897,7 +910,7 @@
             <li>
               {{dim4}}
             </li>
-          </ul>
+          </ul> -->
 
         </div>
         <div id="recipe-share-box">
@@ -912,7 +925,8 @@
 
               <b>Reflective</b>
               <span>learners learn by thinking about information. They prefer to think things through and understand things before
-                acting.</span>
+                acting.
+              </span>
 
             </div>
             <li id="info-btn-B" (click)="toggle_info('B')" class="learnerStyleBox doc-link">Sensing/ Intutive Learner
