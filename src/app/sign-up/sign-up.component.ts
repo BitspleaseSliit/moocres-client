@@ -35,7 +35,8 @@ export class SignUpComponent implements OnInit {
       this.invalid = true;
     } else {
       this.storage.set('user', this.profile);
-      this.router.navigateByUrl('/profile');
+      window.location.href  = '/profile';
+      // this.router.navigateByUrl('/profile');
     }
   }
 
