@@ -12,7 +12,7 @@
 .myFont{
     justify-content: center;
     font-size: 18px;
-    font-family: 'Merriweather', serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: normal;
     line-height: 1.4;
 }
@@ -79,4 +79,12 @@
   
   .doc-link-active:before {
     background-color: #ffe2cc !important;
+  }
+
+  .regular input{
+    cursor: pointer !important;
+  }
+
+  .regular label{
+    cursor: pointer !important;
   }

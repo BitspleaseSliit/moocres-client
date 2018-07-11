@@ -29,3 +29,19 @@
 .center{
     text-align: center;
 }
+
+.section a {
+    text-decoration: none !important;
+}
+
+.section{
+    width: 50%;
+}
+
+.fit{
+    max-height: fit-content;
+}
+
+.pointer{
+    cursor: pointer;
+}

@@ -1,18 +1,19 @@
 <div class="row col-md-12">
 
-  <div class="card col-md-2 ml50 mr75 p15 m">
+  <div class="card col-md-2 ml50 mr75 p15 m fit">
     <img src="assets/profile/user.jpg" alt="John" style="width:100%">
     <p>
       <button>Change photo</button>
     </p>
     <h1>{{user.name}}</h1>
+    <a *ngIf="!user.style || user.style !=='Not found yet'" routerLink="/learnerstyles">Take questionnaire again</a>
     <p class="title">Learning Style: {{user.style}}</p>
     <a *ngIf="!user.style || user.style=='Not found yet'" routerLink="/learnerstyles">Find now</a>
     <p>{{user.email}}</p>
     <a routerLink="">Change Password</a>
   </div>
 
-  <section class="mb50 col-md-10">
+  <section class="mb50 col-md-10 section">
     <h2 class="section-title mb40">Best Recommended Moocs fits for you</h2>
     <div *ngIf="user.style == 'Not found yet'">
       <h2>We could not find your learning style. Please take the questionnaire to find out your own learning style. </h2>
@@ -22,35 +23,25 @@
     </div>
     <div *ngIf="!(user.style=='Not found yet')" class="row col-md-12">
 
-      <div class="col-md-4 recipe-box" data-id="1197">
-        <div>
-          <a href="/bestcourses" title="Frontend Developer">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/coursera-card.png)"></div>
-            <h3 class="recipe-box-title">Android App Development</h3>
-            <div class="recipe-box-location">
-              <p>Vanderbilt University</p>
+        <div *ngFor="let course of courses" class="col-md-4 recipe-box" data-id="1197">
+            <div class="pointer">
+              <a (click)="newTab(course.url)" title="Frontend Developer">
+                <div *ngIf="course.logo == 'coursera'" class="recipe-box-fruit" style="background-image: url(assets/coursera-card.png)"></div>
+                <div *ngIf="course.logo == 'futureLearn'" class="recipe-box-fruit" style="background-image: url(assets/futureLearn.png)"></div>
+                <div *ngIf="course.logo == 'edx'" class="recipe-box-fruit" style="background-image: url(assets/edxLogo.png)"></div>
+                <h3 class="recipe-box-title">{{course.courseName}}</h3>
+                <div class="recipe-box-location">
+                  <p>{{course.uniName}}</p>
+                </div>
+                <div class="recipe-box-link">
+                  View Course
+                </div>
+              </a>
             </div>
-            <div class="recipe-box-link">
-              View Course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 recipe-box" data-id="181">
-        <div>
-          <a href="/bestcourses" title="Senior Backend Developer">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/futureLearn.png)"></div>
-            <h3 class="recipe-box-title">Neural networks and Deep Learning</h3>
-            <div class="recipe-box-location">
-              <p>deeplearning.ai</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4 recipe-box" data-id="3047">
+          </div>
+
+     
+      <!-- <div class="col-md-4 recipe-box" data-id="3047">
         <div>
           <a href="/bestcourses" title="Claims Experience Adjuster (Property)">
             <div class="recipe-box-fruit" style="background-image: url(./assets/edxLogo.png)"></div>
@@ -63,7 +54,7 @@
             </div>
           </a>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 

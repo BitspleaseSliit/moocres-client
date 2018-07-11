@@ -9,11 +9,12 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { BestcoursesComponent } from './bestcourses/bestcourses.component';
 import { LearnerstylesComponent } from './learnerstyles/learnerstyles.component';
-import {ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './profile/profile.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LogInComponent } from './log-in/log-in.component';
-import { StorageServiceModule} from 'angular-webstorage-service';
+import { StorageServiceModule } from 'angular-webstorage-service';
+import { SampleData } from './sample-data';
 
 
 @NgModule({
@@ -33,9 +34,10 @@ import { StorageServiceModule} from 'angular-webstorage-service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    StorageServiceModule
+    StorageServiceModule,
+
   ],
-  providers: [],
+  providers: [SampleData],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

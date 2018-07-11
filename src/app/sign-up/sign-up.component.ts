@@ -1,7 +1,7 @@
 import { Inject, Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { LOCAL_STORAGE, WebStorageService } from 'angular-webstorage-service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -31,11 +31,15 @@ export class SignUpComponent implements OnInit {
 
   signUp() {
     console.log(this.profile, this.checkPass);
+    if (this.profile.name === '' || this.profile.email === '' || this.profile.password === '') {
+      this.invalid = true;
+      return;
+    }
     if (this.profile.password && this.profile.password !== this.checkPass) {
       this.invalid = true;
     } else {
       this.storage.set('user', this.profile);
-      window.location.href  = '/profile';
+      window.location.href = '/profile';
       // this.router.navigateByUrl('/profile');
     }
   }

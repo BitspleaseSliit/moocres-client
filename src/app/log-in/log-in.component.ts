@@ -25,6 +25,10 @@ export class LogInComponent implements OnInit {
   }
 
   logIn() {
+    if (this.profile.email === '' || this.profile.password === '') {
+      this.invalid = true;
+      return;
+    }
     if (this.userData.email === this.profile.email && this.userData.password === this.profile.password) {
       this.userData.status = true;
       this.storage.set('user', this.userData);

@@ -1,265 +1,100 @@
-
-
-
-<nav class="faq-menu js-faq-menu mb20 mt40px">
-    <ul>
-        <li class="border-no recipe-box"><img src="/assets/icons/1.jpg" class="res" /></li>
-        <li  class="border-no recipe-box"><img src="/assets/icons/2.jpg" class="res"/></li>
-        <li  class="border-no recipe-box"><img src="/assets/icons/3.jpg" class="res"/></li>
-        <li  class="border-no recipe-box"><img src="/assets/icons/4.jpg" class="res"/></li>
-    </ul>
-</nav>
-
-
 <div class="container">
-    <div class="row">
-          <div class="span12">
-              <form id="custom-search-form" class="form-search form-horizontal pull-right">
-                  <div class="input-append span12">
-                      <input type="text" class="search-query search-box" placeholder="Search">
-                      <button type="submit" class="btn btn-link"><i class="icon-search"></i></button>
+  <div class="row mt10">
+    <div class="span12">
+      <form id="custom-search-form" class="form-search form-horizontal pull-right">
+        <div id="fkbx" class="input-append span12">
+          <input id="ib" type="text" class="search-box" placeholder="Search">
+          <button type="submit" class="btn btn-link">
+            <i class="icon-search"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="filters">
+
+      <div class="app--sidebar-widget mb30">
+        <div class="sidebar-widget-heading mb10">
+          <h2 class="title">Order by learner types</h2>
+        </div>
+
+        <div class="sidebar-widget-body">
+
+          <div class="card-check-chip ">
+            <div class="action round-checkbox">
+              <input type="checkbox" id="check-011-0" name="check-011-0">
+              <label for="check-011-0"></label>
+            </div>
+            <div class="card-details">
+              <span>Active/Reflective Learner</span>
+            </div>
+          </div>
+
+          <div class="card-check-chip">
+            <div class="action round-checkbox">
+              <input type="checkbox" id="check-011-1" name="check-011-1">
+              <label for="check-011-1"></label>
+            </div>
+            <div class="card-details">
+              <span>Sensing/ Intutive Learner</span>
+            </div>
+          </div>
+
+          <div class="card-check-chip">
+            <div class="action round-checkbox">
+              <input type="checkbox" id="check-011-1" name="check-011-1">
+              <label for="check-011-1"></label>
+            </div>
+            <div class="card-details">
+              <span>Visual/Verbal Learner</span>
+            </div>
+          </div>
+
+          <div class="card-check-chip">
+            <div class="action round-checkbox">
+              <input type="checkbox" id="check-011-1" name="check-011-1">
+              <label for="check-011-1"></label>
+            </div>
+            <div class="card-details">
+              <span>Sequential/Global Learner</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="mtn5 ml100 mr10">
+      <section class="hp-section section">
+        <div class="recipes-wrapper">
+
+          <div class="row">
+
+            <div *ngFor="let course of courses" class="columns recipe-box" data-id="1197">
+              <div class="pointer">
+                <a title="Frontend Developer" (click)="newTab(course.url)">
+                  <div *ngIf="course.logo == 'coursera'" class="recipe-box-fruit" style="background-image: url(assets/coursera-card.png)"></div>
+                  <div *ngIf="course.logo == 'futureLearn'" class="recipe-box-fruit" style="background-image: url(assets/futureLearn.png)"></div>
+                  <div *ngIf="course.logo == 'edx'" class="recipe-box-fruit" style="background-image: url(assets/edxLogo.png)"></div>
+                  <h3 class="recipe-box-title">{{course.courseName}}</h3>
+                  <div class="recipe-box-location">
+                    <p>{{course.uniName}}</p>
                   </div>
-              </form>
+                  <div class="recipe-box-link">
+                    View Course
+                  </div>
+                </a>
+              </div>
+            </div>
+
           </div>
+        </div>
+      </section>
     </div>
   </div>
-
-
-
-
-<section class="hp-section">
-  <div class="recipes-wrapper">
-      <h2 class="section-title-popular">Most Popular Courses for Visual Learners</h2>
-
-    <div class="row">
-      <div class="columns recipe-box" data-id="1197">
-        <div>
-          <a href="https://www.coursera.org/" title="Frontend Developer">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/coursera-card.png)"></div>
-            <h3 class="recipe-box-title">Android App Development</h3>
-            <div class="recipe-box-location">
-              <p>Vanderbilt University</p>
-            </div>
-            <div class="recipe-box-link">
-              View Course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns recipe-box" data-id="181">
-        <div>
-          <a href="https://www.coursera.org/" title="Senior Backend Developer">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/futureLearn.png)"></div>
-            <h3 class="recipe-box-title">Neural networks and Deep Learning</h3>
-            <div class="recipe-box-location">
-              <p>deeplearning.ai</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns recipe-box" data-id="3047">
-        <div>
-          <a href="https://www.coursera.org/" title="Claims Experience Adjuster (Property)">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/edxLogo.png)"></div>
-            <h3 class="recipe-box-title">Blockchain</h3>
-            <div class="recipe-box-location">
-              <p>The State University of New York</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="columns recipe-box" data-id="3407">
-        <div>
-          <a href="https://www.coursera.org/" title="Senior Product Manager">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/edxLogo.png)"></div>
-            <h3 class="recipe-box-title">Senior Product Manager</h3>
-            <div class="recipe-box-location">
-              <p>Sarona Campus, Tel Aviv</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns recipe-box" data-id="3208">
-        <div>
-          <a href="https://www.coursera.org/" title="Content Marketer">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/futureLearn.png)"></div>
-            <h3 class="recipe-box-title">Content Marketer</h3>
-            <div class="recipe-box-location">
-              <p>Sarona Campus, Tel Aviv</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns recipe-box" data-id="109">
-        <div>
-          <a href="https://www.coursera.org/" title="Android Developer">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/futureLearn.png)"></div>
-            <h3 class="recipe-box-title">Android Developer</h3>
-            <div class="recipe-box-location">
-              <p>Sarona Campus, Tel Aviv</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns recipe-box" data-id="2207">
-        <div>
-          <a href="https://www.coursera.org/" title="Insurance Filing Specialist">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/edxLogo.png)"></div>
-            <h3 class="recipe-box-title">Insurance Filing Specialist</h3>
-            <div class="recipe-box-location">
-              <p>Soho, New York</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns recipe-box" data-id="1194">
-        <div>
-          <a href="https://www.coursera.org/" title="QA Engineer">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/futureLearn.png)"></div>
-            <h3 class="recipe-box-title">QA Engineer</h3>
-            <div class="recipe-box-location">
-              <p>Sarona Campus, Tel Aviv</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns recipe-box" data-id="2215">
-        <div>
-          <a href="https://www.coursera.org/" title="Partner Marketing Manager">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/edxLogo.png)"></div>
-            <h3 class="recipe-box-title">Partner Marketing Manager</h3>
-            <div class="recipe-box-location">
-              <p>Soho, New York</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns recipe-box" data-id="2677">
-        <div>
-          <a href="https://www.coursera.org/" title="Product Compliance Specialist">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/coursera-card.png)"></div>
-            <h3 class="recipe-box-title">Product Compliance Specialist</h3>
-            <div class="recipe-box-location">
-              <p>Soho, New York</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns recipe-box" data-id="2218">
-        <div>
-          <a href="https://www.coursera.org/" title="Sales Manager &#8211; Real Estate">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/edxLogo.png)"></div>
-            <h3 class="recipe-box-title">Sales Manager &#8211; Real Estate</h3>
-            <div class="recipe-box-location">
-              <p>Soho, New York</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns recipe-box" data-id="1196">
-        <div>
-          <a href="https://www.coursera.org/" title="Senior DevOps Engineer">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/coursera-card.png)"></div>
-            <h3 class="recipe-box-title">Senior DevOps Engineer</h3>
-            <div class="recipe-box-location">
-              <p>Sarona Campus, Tel Aviv</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns recipe-box" data-id="107">
-        <div>
-          <a href="https://www.coursera.org/" title="Customer Experience Specialist">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/edxLogo.png)"></div>
-            <h3 class="recipe-box-title">Customer Experience Specialist</h3>
-            <div class="recipe-box-location">
-              <p>Soho, New York</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns recipe-box" data-id="177">
-        <div>
-          <a href="https://www.coursera.org/" title="Licensed P&#038;C Insurance Customer Experience">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/futureLearn.png)"></div>
-            <h3 class="recipe-box-title">Licensed P&#038;C Insurance Customer Experience</h3>
-            <div class="recipe-box-location">
-              <p>Soho, New York</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="columns recipe-box" data-id="80">
-        <div>
-          <a href="https://www.coursera.org/" title="ML/AI Data Scientist">
-            <div class="recipe-box-fruit" style="background-image: url(./assets/coursera-card.png)"></div>
-            <h3 class="recipe-box-title">ML/AI Data Scientist</h3>
-            <div class="recipe-box-location">
-              <p>Sarona Campus, Tel Aviv</p>
-            </div>
-            <div class="recipe-box-link">
-              view course
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="hp-section">
-    <div class="container">
-      <h2 class="section-title">Find Your level </h2>
-      <div class="subtitle">
-        <p>Take the quiz and find where you stand in terms of stack
-          <br /> 
-          <br />  </p>            
-        <div class ="hide-on-device" class="home-action-button">                
-            <a data-track="menu_check_prices" href="/learnerstyles">Find Now</a>
-          </div>
-
-          <div class="app-sketch"></div>
-
-        </div>
-      </div>
-    </section>
+</div>

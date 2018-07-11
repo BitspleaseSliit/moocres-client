@@ -10,18 +10,18 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   constructor(private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
-
+  user: any;
   authTrue = false;
   ngOnInit() {
-    if (this.storage.get('user').status === true) {
+    this.user = this.storage.get('user');
+    if (this.user.status === true) {
       this.authTrue = true;
     }
   }
 
   logOut() {
-    const user = this.storage.get('user');
-    user.status = false;
-    this.storage.set('user', user);
+    this.user.status = false;
+    this.storage.set('user', this.user);
     window.location.href = '/login';
   }
 

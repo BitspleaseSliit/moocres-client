@@ -18,7 +18,82 @@
 .search-box{
     height: 50px;
     width: 600px;
+    font-size: 25px;
+    margin-left: 15px;
 }
 .mt40px{
     margin-top: 120px;
+}
+.section a {
+    text-decoration: none !important;
+}
+
+.mt10{
+    margin-top: 10% !important;
+    z-index: 99;
+}
+
+#fkbx {
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    height: 55px;
+    outline: none;
+    transition: box-shadow 200ms cubic-bezier(0.4,0.0,0.2,1);
+    width: 620px;
+}
+
+#ib {
+    border: none !important;
+}
+
+.card-check-chip {
+    font-style: normal;
+    font-stretch: normal;
+    line-height: initial;
+    padding: 0;
+    margin: 0 0 5px;
+    list-style: none;
+    display: inline-flex;
+    width: 100%;
+    vertical-align: top;
+    margin-bottom: 15px;
+}
+
+.card-check-chip .card-details {
+    font-style: normal;
+    font-stretch: normal;
+    line-height: initial;
+    padding: 0 0 0 7px;
+    margin: 0;
+    list-style: none;
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+
+.mtn5{
+    margin-top: -5%;
+}
+
+.filters{
+    height: 100px;
+    width: 18%;
+}
+
+.inline{
+    display: inline;
+}
+
+.ml100{
+    width: 60%;
+}
+
+
+.mr10{
+    margin-right: 10%;
+}
+
+.pointer{
+    cursor: pointer;
 }
