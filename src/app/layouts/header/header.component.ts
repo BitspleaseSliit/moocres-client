@@ -13,9 +13,14 @@ export class HeaderComponent implements OnInit {
   user: any;
   authTrue = false;
   ngOnInit() {
-    this.user = this.storage.get('user');
-    if (this.user.status === true) {
-      this.authTrue = true;
+    if (this.storage.get('user')) {
+      this.user = this.storage.get('user');
+      if (this.user.status === true) {
+        this.authTrue = true;
+      }
+    } else {
+      this.authTrue = false;
+      this.user = null;
     }
   }
 

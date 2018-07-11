@@ -43,7 +43,7 @@
           <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-155">
             <a routerLink="/bestcourses">Find Courses</a>
           </li>
-          <li *ngIf="user.style == 'Not found yet'" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-151">
+          <li *ngIf="user && user.style == 'Not found yet'" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-151">
             <a routerLink="/learnerstyles">Learning Style</a>
           </li>
           <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156">

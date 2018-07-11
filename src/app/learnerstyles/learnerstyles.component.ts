@@ -9,6 +9,7 @@ import { LOCAL_STORAGE, WebStorageService } from 'angular-webstorage-service';
 })
 export class LearnerstylesComponent implements OnInit {
 
+  styleScore: string;
   // tslint:disable-next-line:max-line-length
   answers: string[] = new Array();
   // tslint:disable-next-line:max-line-length
@@ -121,9 +122,15 @@ export class LearnerstylesComponent implements OnInit {
     this.calculateing();
     this.check = true;
     this.learingStyle = this.dim1 + '/' + this.dim2 + '/' + this.dim3 + '/' + this.dim4;
+    this.styleScore = this.activistOrReflector + '/' + this.visualOrVerbal + '/' + this.sensingOrIntuitive + '/' + this.sequentialOrGlobal;
     const user = this.storage.get('user');
     user.style = this.learingStyle;
+    user.score = this.styleScore;
     this.storage.set('user', user);
+    console.log(this.sequentialOrGlobal);
+    console.log(this.sensingOrIntuitive);
+    console.log(this.visualOrVerbal);
+    console.log(this.activistOrReflector);
     console.log(this.dim1);
     console.log(this.dim2);
     console.log(this.dim3);

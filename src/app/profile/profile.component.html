@@ -6,22 +6,25 @@
       <button>Change photo</button>
     </p>
     <h1>{{user.name}}</h1>
-    <a *ngIf="!user.style || user.style !=='Not found yet'" routerLink="/learnerstyles">Take questionnaire again</a>
+    <a *ngIf="user && !user.style || user.style !=='Not found yet'" routerLink="/learnerstyles">Take questionnaire again</a>
     <p class="title">Learning Style: {{user.style}}</p>
-    <a *ngIf="!user.style || user.style=='Not found yet'" routerLink="/learnerstyles">Find now</a>
+    <a *ngIf="user && !user.style || user.style=='Not found yet'" routerLink="/learnerstyles">Find now</a>
     <p>{{user.email}}</p>
     <a routerLink="">Change Password</a>
   </div>
 
   <section class="mb50 col-md-10 section">
     <h2 class="section-title mb40">Best Recommended Moocs fits for you</h2>
-    <div *ngIf="user.style == 'Not found yet'">
+    <div *ngIf="user && user.style == 'Not found yet'">
       <h2>We could not find your learning style. Please take the questionnaire to find out your own learning style. </h2>
       <div class="home-action-button title-button center">
         <a routerLink="/learnerstyles" style="font-size:20px">Find Your Learning Style Now</a>
       </div>
     </div>
-    <div *ngIf="!(user.style=='Not found yet')" class="row col-md-12">
+    <div *ngIf="courses.length == 0 && user.style !== 'Not found yet'">
+        <h2>We are sorry. At the moment we don't have any matching courses for your learning style. </h2>
+      </div>
+    <div *ngIf="user && !(user.style=='Not found yet')" class="row col-md-12">
 
         <div *ngFor="let course of courses" class="col-md-4 recipe-box" data-id="1197">
             <div class="pointer">
