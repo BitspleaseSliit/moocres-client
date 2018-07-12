@@ -79,7 +79,7 @@ export class ProfileComponent implements OnInit {
         console.log(course.videoStyle.conversations);
         console.log(course.videoStyle.code);
 
-        if (course.videoStyle.talkingHead > course.videoStyle.slide) {
+        if (course.videoStyle.talkingHead > course.videoStyle.code) {
           this.courses.push(course);
         }
 
@@ -93,12 +93,12 @@ export class ProfileComponent implements OnInit {
         console.log(course.videoStyle.conversations);
         console.log(course.videoStyle.code);
 
-        if (course.videoStyle.talkingHead < course.videoStyle.slide) {
+        if (course.videoStyle.talkingHead < course.videoStyle.code) {
           this.courses.push(course);
         }
 
       });
-      console.log('slide');
+      console.log('code');
     }
 
   }

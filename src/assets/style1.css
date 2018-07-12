@@ -662,12 +662,12 @@ body.archive #masthead #logo a:before, #masthead.sticky #logo a:before{
 .recipe-box h3.recipe-box-title{
 	display: flex;
 	justify-content: center;
-	font-size: 18px;
+	font-size: 1vw;
 	font-family: "Montserrat", sans-serif;
 	margin-bottom: 10px;
 	font-weight: normal;
 	height: 50px;
-	padding: 0 35px;
+	padding: 0 20px;
 	line-height: 1.4;
 }
 .recipe-box .recipe-box-location{

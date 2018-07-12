@@ -14,7 +14,21 @@
   </div>
 
   <section class="mb50 col-md-10 section">
-    <h2 class="section-title mb40">Best Recommended Moocs fits for you</h2>
+    <h2 class="section-title">Best Recommended Moocs fits for you</h2>
+
+    <div class="row mb50">
+      <div class="span12">
+        <form id="custom-search-form" class="form-search form-horizontal pull-right">
+          <div id="fkbx" class="input-append span12">
+            <input id="ib" type="text" class="search-box" placeholder="Search">
+            <button type="submit" class="btn btn-link">
+              <i class="icon-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <div *ngIf="user && user.style == 'Not found yet'">
       <h2>We could not find your learning style. Please take the questionnaire to find out your own learning style. </h2>
       <div class="home-action-button title-button center">
