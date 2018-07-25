@@ -35,10 +35,10 @@ import { APP_BASE_HREF } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    StorageServiceModule,
+    StorageServiceModule
 
   ],
-  providers: [SampleData, {provide: APP_BASE_HREF, useValue: '/' }],
+  providers: [HeaderComponent, SampleData, { provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

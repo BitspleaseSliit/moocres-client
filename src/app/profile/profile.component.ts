@@ -19,8 +19,8 @@ export class ProfileComponent implements OnInit {
   private style: any;
   private score: any;
   ngOnInit() {
-
-    if (!this.storage.get('user')) {
+    console.log("this.storage.get('user').status", this.storage.get('user').status)
+    if (!this.storage.get('user').status) {
       this.router.navigateByUrl('/signup');
     }
     console.log('userprofile', this.storage.get('user'));

@@ -2,6 +2,7 @@ import { Inject, Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { LOCAL_STORAGE, WebStorageService } from 'angular-webstorage-service';
 import { Router } from '@angular/router';
+import { SampleData } from '../sample-data';
 
 @Component({
   selector: 'app-log-in',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LogInComponent implements OnInit {
 
-  constructor(private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
+  constructor(private data: SampleData, private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
 
   public profile = {
     email: '',
@@ -34,6 +35,7 @@ export class LogInComponent implements OnInit {
       this.storage.set('user', this.userData);
       // this.router.navigateByUrl('/profile');
       // window.location.routerLink = '/profile';
+      this.data.getLoggedIn.emit(true);
       this.router.navigateByUrl('/profile');
     } else {
       this.invalid = true;

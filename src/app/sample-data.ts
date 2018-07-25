@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class SampleData {
+
+    @Output() getLoggedIn: EventEmitter<any> = new EventEmitter();
 
     private coursera = 'assets/coursera-card.png';
     private futureLearn = 'assets/futureLearn.png';
