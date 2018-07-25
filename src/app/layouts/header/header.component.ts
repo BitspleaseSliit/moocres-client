@@ -27,7 +27,8 @@ export class HeaderComponent implements OnInit {
   logOut() {
     this.user.status = false;
     this.storage.set('user', this.user);
-    window.location.href = '/login';
+    // window.location.routerLink = '/login';
+    this.router.navigateByUrl('/profile');
   }
 
 }

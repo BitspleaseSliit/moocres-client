@@ -22,15 +22,24 @@ export class SignUpComponent implements OnInit {
   invalid = false;
   ngOnInit() {
     $('html,body').animate({ scrollTop: '0px' }, 'slow');
-    this.profile.name = '';
-    this.profile.email = '';
-    this.profile.password = '';
-    this.checkPass = '';
-    this.profile.status = true;
+
+    if (this.storage.get('user')) {
+      this.profile = this.storage.get('user');
+      this.profile.status = true;
+    } else {
+      this.profile.name = '';
+      this.profile.email = '';
+      this.profile.password = '';
+      this.checkPass = '';
+      this.profile.status = true;
+    }
+
+
   }
 
   signUp() {
     console.log(this.profile, this.checkPass);
+
     if (this.profile.name === '' || this.profile.email === '' || this.profile.password === '') {
       this.invalid = true;
       return;
@@ -39,7 +48,11 @@ export class SignUpComponent implements OnInit {
       this.invalid = true;
     } else {
       this.storage.set('user', this.profile);
-      window.location.href = '/profile';
+      console.log(this.storage.get('user'));
+
+
+      // window.location.routerLink = '/profile';
+      this.router.navigateByUrl('/profile');
       // this.router.navigateByUrl('/profile');
     }
   }

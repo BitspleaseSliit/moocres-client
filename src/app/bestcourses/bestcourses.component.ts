@@ -11,15 +11,35 @@ export class BestcoursesComponent implements OnInit {
 
   constructor(private data: SampleData) { }
   public courses: any;
+  filtered: any;
+  filtered_secod: any;
+  searchQ = '';
+  topicQ = '';
 
   ngOnInit() {
     $('html,body').animate({ scrollTop: '0px' }, 'slow');
     this.courses = this.data.courseData;
+    this.filtered = this.courses;
     console.log(this.data.courseData);
+
   }
 
   newTab(url) {
     console.log(url);
     window.open(url, '_blank');
+  }
+  searchCourse() {
+    console.log('hello');
+    this.courses = this.data.courseData.filter(item => item.courseName.toUpperCase().indexOf(this.searchQ.toUpperCase()) !== -1);
+    this.filtered = this.courses;
+  }
+  searchTopic() {
+    console.log('hello');
+    this.courses = this.filtered.filter(item => item.courseName.toUpperCase().indexOf(this.topicQ.toUpperCase()) !== -1);
+    this.filtered_secod = this.courses;
+  }
+  accentChange(value) {
+    this.courses = this.filtered_secod.filter(item => item.logo.toUpperCase().indexOf(value.toUpperCase()) !== -1);
+    console.log('hello', value);
   }
 }

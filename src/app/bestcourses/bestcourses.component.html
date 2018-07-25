@@ -1,14 +1,38 @@
 <div class="container">
-  <div class="row mt10">
+
+  <div class="row mt10 mb40">
+    <div>
+      <h1 class="mr30">I want to learn </h1>
+    </div>
     <div class="span12">
-      <form id="custom-search-form" class="form-search form-horizontal pull-right">
-        <div id="fkbx" class="input-append span12">
-          <input id="ib" type="text" class="search-box" placeholder="Search">
-          <button type="submit" class="btn btn-link">
-            <i class="icon-search"></i>
-          </button>
-        </div>
-      </form>
+      <div id="fkbx" class="input-append span12">
+        <input id="ib" type="text" class="search-box" placeholder="Search" (keyup)="searchCourse()" [(ngModel)]="searchQ" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div>
+      <h2 class="mr30">Specific Topic </h2>
+    </div>
+    <div class="span12 mr20">
+      <div id="fkbxtopic" class="input-append span12">
+        <input id="ibtopic" type="text" class="topic-box" placeholder="Topic" (keyup)="searchTopic()" [(ngModel)]="topicQ" />
+      </div>
+
+    </div>
+
+    <div>
+      <h2 class="mr30">Preferred Accent </h2>
+    </div>
+    <div class="span12">
+      <div id="fkbxtopic2" class="input-append span12">
+        <select id="ibtopic2" class="topic-box" (change)="accentChange(accent.value)" #accent>
+          <option value="">-Please Select-</option>
+          <option value="coursera">Native English</option>
+          <option value="edx">Non-Native English</option>
+        </select>
+      </div>
     </div>
   </div>
 
@@ -69,32 +93,32 @@
 
     </div>
 
-    <div class="mtn5 ml100 mr10">
-      <section class="hp-section section">
-        <div class="recipes-wrapper">
+    <div class="ml100 mr10">
+      <!-- <section class="hp-section section"> -->
+      <div class="recipes-wrapper">
 
-          <div class="row">
+        <div class="row">
 
-            <div *ngFor="let course of courses" class="columns recipe-box" data-id="1197">
-              <div class="pointer">
-                <a title="Frontend Developer" (click)="newTab(course.url)">
-                  <div *ngIf="course.logo == 'coursera'" class="recipe-box-fruit" style="background-image: url(assets/coursera-card.png)"></div>
-                  <div *ngIf="course.logo == 'futureLearn'" class="recipe-box-fruit" style="background-image: url(assets/futureLearn.png)"></div>
-                  <div *ngIf="course.logo == 'edx'" class="recipe-box-fruit" style="background-image: url(assets/edxLogo.png)"></div>
-                  <h3 class="recipe-box-title">{{course.courseName}}</h3>
-                  <div class="recipe-box-location">
-                    <p>{{course.uniName}}</p>
-                  </div>
-                  <div class="recipe-box-link">
-                    View Course
-                  </div>
-                </a>
-              </div>
+          <div *ngFor="let course of courses" class="columns recipe-box" data-id="1197">
+            <div class="pointer">
+              <a title="Frontend Developer" (click)="newTab(course.url)">
+                <div *ngIf="course.logo == 'coursera'" class="recipe-box-fruit" style="background-image: url(assets/coursera-card.png)"></div>
+                <div *ngIf="course.logo == 'futureLearn'" class="recipe-box-fruit" style="background-image: url(assets/futureLearn.png)"></div>
+                <div *ngIf="course.logo == 'edx'" class="recipe-box-fruit" style="background-image: url(assets/edxLogo.png)"></div>
+                <h3 class="recipe-box-title">{{course.courseName}}</h3>
+                <div class="recipe-box-location">
+                  <p>{{course.uniName}}</p>
+                </div>
+                <div class="recipe-box-link">
+                  View Course
+                </div>
+              </a>
             </div>
-
           </div>
+
         </div>
-      </section>
+      </div>
+      <!-- </section> -->
     </div>
   </div>
 </div>

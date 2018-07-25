@@ -11,6 +11,21 @@
 	transform: translate3d(-50%,-50%,0);
 }
 
+.mt10 {
+	margin-top: 10px;
+}
+
+.yt{
+	font-size: 20px;
+	
+}
+
+.yt-img{
+	width: 2vw;
+	position: relative;
+    bottom: -3px;
+    right: 4px;
+}
 .main-title > h1 {
     color: #4a4a4a;
     padding-bottom: 0px;

@@ -15,6 +15,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { StorageServiceModule } from 'angular-webstorage-service';
 import { SampleData } from './sample-data';
+import { APP_BASE_HREF } from '@angular/common';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { SampleData } from './sample-data';
     StorageServiceModule,
 
   ],
-  providers: [SampleData],
+  providers: [SampleData, {provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

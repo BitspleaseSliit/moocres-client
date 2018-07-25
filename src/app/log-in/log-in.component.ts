@@ -33,7 +33,8 @@ export class LogInComponent implements OnInit {
       this.userData.status = true;
       this.storage.set('user', this.userData);
       // this.router.navigateByUrl('/profile');
-      window.location.href = '/profile';
+      // window.location.routerLink = '/profile';
+      this.router.navigateByUrl('/profile');
     } else {
       this.invalid = true;
     }

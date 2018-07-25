@@ -17,8 +17,14 @@
 }
 .search-box{
     height: 50px;
-    width: 600px;
+    width: 400px;
     font-size: 25px;
+    margin-left: 15px;
+}
+.topic-box{
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
     margin-left: 15px;
 }
 .mt40px{
@@ -40,13 +46,41 @@
     height: 55px;
     outline: none;
     transition: box-shadow 200ms cubic-bezier(0.4,0.0,0.2,1);
-    width: 620px;
+    width: 420px;
+}
+
+
+#fkbxtopic {
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    height: 35px;
+    outline: none;
+    transition: box-shadow 200ms cubic-bezier(0.4,0.0,0.2,1);
+    width: 220px;
+}
+#fkbxtopic2 {
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    height: 35px;
+    outline: none;
+    transition: box-shadow 200ms cubic-bezier(0.4,0.0,0.2,1);
+    width: 220px;
 }
 
 #ib {
     border: none !important;
 }
 
+#ibtopic {
+    border: none !important;
+
+}
+#ibtopic2 {
+    border: none !important;
+
+}
 .card-check-chip {
     font-style: normal;
     font-stretch: normal;
@@ -70,8 +104,16 @@
     display: inline-flex;
     vertical-align: middle;
 }
+.mb10 {
+    margin-bottom: 10px;
+}
 
-
+.mb40 {
+    margin-bottom: 40px;
+}
+.mr20 {
+    margin-right: 20px;
+}
 .mtn5{
     margin-top: -5%;
 }
@@ -79,6 +121,16 @@
 .filters{
     height: 100px;
     width: 18%;
+    color: orange;
+    font-size: 19px;
+}
+.background{
+    background-repeat: repeat-y;
+    background-image: url('assets/before.png');
+    background-position: right;
+    background-position-y: top;
+    background-size: 200px;
+
 }
 
 .inline{
@@ -96,4 +148,8 @@
 
 .pointer{
     cursor: pointer;
+}
+
+.mr30 {
+    margin-right: 30px;
 }

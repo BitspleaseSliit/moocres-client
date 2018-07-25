@@ -35,7 +35,7 @@ export class LearnerstylesComponent implements OnInit {
 
   pageNumber = 0;
   check = false;
-  constructor( @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
+  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
 
   ngOnInit() {
     $('html,body').animate({ scrollTop: '0px' }, 'slow');
@@ -119,10 +119,19 @@ export class LearnerstylesComponent implements OnInit {
 
 
   checkScore() {
+    const profile = {
+      name: '',
+      email: '',
+      password: '',
+      status: false,
+      style: 'Not found yet'
+    };
+
     this.calculateing();
     this.check = true;
     this.learingStyle = this.dim1 + '/' + this.dim2 + '/' + this.dim3 + '/' + this.dim4;
     this.styleScore = this.activistOrReflector + '/' + this.visualOrVerbal + '/' + this.sensingOrIntuitive + '/' + this.sequentialOrGlobal;
+    this.storage.set('user', profile);
     const user = this.storage.get('user');
     user.style = this.learingStyle;
     user.score = this.styleScore;

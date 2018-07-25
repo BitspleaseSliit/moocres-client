@@ -10,7 +10,7 @@
     <p class="title">Learning Style: {{user.style}}</p>
     <a *ngIf="user && !user.style || user.style=='Not found yet'" routerLink="/learnerstyles">Find now</a>
     <p>{{user.email}}</p>
-    <a routerLink="">Change Password</a>
+    <a >Change Password</a>
   </div>
 
   <section class="mb50 col-md-10 section">
@@ -60,7 +60,7 @@
      
       <!-- <div class="col-md-4 recipe-box" data-id="3047">
         <div>
-          <a href="/bestcourses" title="Claims Experience Adjuster (Property)">
+          <a routerLink="/bestcourses" title="Claims Experience Adjuster (Property)">
             <div class="recipe-box-fruit" style="background-image: url(./assets/edxLogo.png)"></div>
             <h3 class="recipe-box-title">Blockchain</h3>
             <div class="recipe-box-location">
