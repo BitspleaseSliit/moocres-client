@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { SampleData } from '../sample-data';
 import { ApiService } from '../api.service';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-bestcourses',
@@ -16,14 +17,13 @@ export class BestcoursesComponent implements OnInit {
   filtered_secod: any;
   searchQ = '';
   topicQ = '';
+  apiData: any;
 
   ngOnInit() {
     $('html,body').animate({ scrollTop: '0px' }, 'slow');
-    this.courses = this.data.courseData;
-    this.filtered = this.courses;
-    console.log(this.data.courseData);
     this.api.getCourses().subscribe((res) => {
-      console.log(res);
+      this.courses = this.filtered = this.apiData = res;
+      console.log('res: ', res);
     });
 
   }
@@ -33,17 +33,26 @@ export class BestcoursesComponent implements OnInit {
     window.open(url, '_blank');
   }
   searchCourse() {
-    console.log('hello');
-    this.courses = this.data.courseData.filter(item => item.courseName.toUpperCase().indexOf(this.searchQ.toUpperCase()) !== -1);
+    this.courses = this.apiData.filter(item => item.name.toUpperCase().indexOf(this.searchQ.toUpperCase()) !== -1);
     this.filtered = this.courses;
   }
   searchTopic() {
-    console.log('hello');
-    this.courses = this.filtered.filter(item => item.courseName.toUpperCase().indexOf(this.topicQ.toUpperCase()) !== -1);
+    this.searchCourse();
+    // this.courses = this.filtered.filter(item => {
+    //   item.forEach(topic => {
+    //     if (topic.toUpperCase() === this.topicQ.toUpperCase()) {
+    //       return true;
+    //     }
+    //   });
+    // });
+    this.courses = this.filtered.filter(item => item.name.toUpperCase().indexOf(this.topicQ.toUpperCase()) !== -1);
     this.filtered_secod = this.courses;
   }
   accentChange(value) {
+    this.searchTopic();
+    console.log('filtered', this.filtered_secod);
+    // this.courses = this.filtered_secod.filter(item => item.courseAccent === value);
     this.courses = this.filtered_secod.filter(item => item.logo.toUpperCase().indexOf(value.toUpperCase()) !== -1);
-    console.log('hello', value);
+    console.log('accent', this.courses);
   }
 }

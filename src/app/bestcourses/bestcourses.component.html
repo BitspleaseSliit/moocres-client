@@ -62,9 +62,9 @@
               <div id="" class="input-append dropdown question w75 pull-right">
 
                 <select id="" class="topic-box" (change)="accentChange(accent.value)" #accent>
-                  <option value=""> Please Select </option>
-                  <option value="coursera">Native English</option>
-                  <option value="edx">Non-Native English</option>
+                  <option value=''> Please Select </option>
+                  <option value='coursera'>Native English</option>
+                  <option value='edx'>Non-Native English</option>
                 </select>
               </div>
             </div>
@@ -129,13 +129,13 @@
 
           <div *ngFor="let course of courses" class="columns recipe-box" data-id="1197">
             <div class="pointer">
-              <a title="Frontend Developer" (click)="newTab(course.url)">
+              <a title="Frontend Developer" (click)="newTab(course.courseUrl)">
                 <div *ngIf="course.logo == 'coursera'" class="recipe-box-fruit" style="background-image: url(assets/coursera-card.png)"></div>
                 <div *ngIf="course.logo == 'futureLearn'" class="recipe-box-fruit" style="background-image: url(assets/futureLearn.png)"></div>
                 <div *ngIf="course.logo == 'edx'" class="recipe-box-fruit" style="background-image: url(assets/edxLogo.png)"></div>
-                <h3 class="recipe-box-title">{{course.courseName}}</h3>
+                <h3 class="recipe-box-title">{{course.name}}</h3>
                 <div class="recipe-box-location">
-                  <p>{{course.uniName}}</p>
+                  <p>{{course.provider}}</p>
                 </div>
                 <div class="recipe-box-link">
                   View Course
