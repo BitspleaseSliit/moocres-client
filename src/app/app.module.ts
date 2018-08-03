@@ -16,6 +16,8 @@ import { LogInComponent } from './log-in/log-in.component';
 import { StorageServiceModule } from 'angular-webstorage-service';
 import { SampleData } from './sample-data';
 import { APP_BASE_HREF } from '@angular/common';
+import { ApiService } from './api.service';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -32,13 +34,14 @@ import { APP_BASE_HREF } from '@angular/common';
     LogInComponent
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     StorageServiceModule
 
   ],
-  providers: [HeaderComponent, SampleData, { provide: APP_BASE_HREF, useValue: '/' }],
+  providers: [HeaderComponent, SampleData, ApiService, { provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

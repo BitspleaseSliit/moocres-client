@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { SampleData } from '../sample-data';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-bestcourses',
@@ -9,7 +10,7 @@ import { SampleData } from '../sample-data';
 })
 export class BestcoursesComponent implements OnInit {
 
-  constructor(private data: SampleData) { }
+  constructor(private data: SampleData, private api: ApiService) { }
   public courses: any;
   filtered: any;
   filtered_secod: any;
@@ -21,6 +22,9 @@ export class BestcoursesComponent implements OnInit {
     this.courses = this.data.courseData;
     this.filtered = this.courses;
     console.log(this.data.courseData);
+    this.api.getCourses().subscribe((res) => {
+      console.log(res);
+    });
 
   }
 

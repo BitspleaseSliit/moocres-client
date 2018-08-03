@@ -613,7 +613,8 @@ body.archive #masthead #logo a:before, #masthead.sticky #logo a:before{
 }
 .recipe-box{
 	align-self: stretch;
-	flex-basis: 33%;
+	/* flex-basis: 33%; */
+	flex-basis: 25%;
 	text-align: center;
 	margin-bottom: 90px;
 	padding: 0 25px;
