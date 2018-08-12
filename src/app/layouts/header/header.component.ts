@@ -14,26 +14,14 @@ export class HeaderComponent implements OnInit {
   user: any;
   public authTrue = false;
   ngOnInit() {
-
-    // if (this.storage.get('user')) {
-    //   this.user = this.storage.get('user');
-    //   if (this.user.status === true) {
-    //     this.authTrue = true;
-    //   }
-    // } else {
-    //   this.authTrue = false;
-    //   this.user = null;
-    // }
-    // this.data.getLoggedIn
     this.data.getLoggedIn.subscribe(bool => this.authTrue = bool);
+    if (this.storage.get('jwt')) {
+      this.authTrue = true;
+    }
   }
 
   logOut() {
-    this.user = this.storage.get('user');
-    this.user.status = false;
-    this.storage.set('user', this.user);
-    // window.location.routerLink = '/login';
-    console.log("this.storage.get('user').status", this.storage.get('user').status);
+    this.storage.remove('jwt');
     this.data.getLoggedIn.emit(false);
     this.router.navigateByUrl('/login');
   }

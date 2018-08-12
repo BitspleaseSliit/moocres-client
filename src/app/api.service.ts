@@ -108,7 +108,7 @@ export class ApiService {
             .catch(this.formatError);
     }
 
-    private getUserById(id): Observable<any[]> {
+    public getUserById(id): Observable<any[]> {
 
         return this.https
             .get(`${this.API_URL}/users/details/${id}`)
@@ -119,7 +119,7 @@ export class ApiService {
             .catch(this.formatError);
     }
 
-    private getUser(): Observable<any[]> {
+    public getUser(): Observable<any[]> {
         const header = this.getHeaders();
         return this.https
             .get(`${this.API_URL}/users/userDetails`, { headers: header })

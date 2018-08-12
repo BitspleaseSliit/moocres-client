@@ -9,6 +9,7 @@
         <input type="password" name="pass" [(ngModel)]="profile.password" placeholder="Password" />
         <span class="warning n25" *ngIf="invalid">Password or Username is not correct</span>
         <input type="button" name="signup" class="next mt25 action-button" value="Log In" (click)="logIn()"/>
+        <span class="warning n25" *ngIf="error">{{error}}</span>
       </fieldset>
     </form>
     </div>

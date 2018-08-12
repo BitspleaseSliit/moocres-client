@@ -124,16 +124,54 @@ export class LearnerstylesComponent implements OnInit {
       email: '',
       password: '',
       status: false,
-      style: 'Not found yet'
+      learningStyles: {}
+    };
+
+    const learningStyles = {
+      active: 0,
+      reflective: 0,
+      sensing: 0,
+      intuitive: 0,
+      visual: 0,
+      verbal: 0,
+      sequential: 0,
+      global: 0
     };
 
     this.calculateing();
     this.check = true;
     this.learingStyle = this.dim1 + '/' + this.dim2 + '/' + this.dim3 + '/' + this.dim4;
+    if (this.dim1 === 'Active') {
+      learningStyles.active = 1;
+    } else {
+      learningStyles.reflective = 1;
+    }
+    if (this.dim1 === 'Sensing') {
+      learningStyles.sensing = 1;
+
+    } else {
+      learningStyles.intuitive = 1;
+
+    }
+    if (this.dim1 === 'Visual') {
+      learningStyles.visual = 1;
+
+    } else {
+      learningStyles.verbal = 1;
+
+    }
+    if (this.dim1 === 'Sequential') {
+      learningStyles.sequential = 1;
+
+    } else {
+      learningStyles.global = 1;
+
+    }
+    profile.learningStyles = learningStyles;
     this.styleScore = this.activistOrReflector + '/' + this.visualOrVerbal + '/' + this.sensingOrIntuitive + '/' + this.sequentialOrGlobal;
     this.storage.set('user', profile);
     const user = this.storage.get('user');
-    user.style = this.learingStyle;
+    user.learningStyles = learningStyles;
     user.score = this.styleScore;
     this.storage.set('user', user);
     console.log(this.sequentialOrGlobal);

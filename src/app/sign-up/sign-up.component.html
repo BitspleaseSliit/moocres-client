@@ -13,6 +13,7 @@
     <span class="warning" *ngIf="profile.password!==checkPass">Passwords should match</span>
     <span class="warning n25" *ngIf="invalid">Please fill everything</span>
     <input type="button" name="signup" class="next mt25 action-button" value="Sign Up" (click)="signUp()"/>
+    <span class="warning n25" *ngIf="error">{{error}}</span>
   </fieldset>
 </form>
 </div>
