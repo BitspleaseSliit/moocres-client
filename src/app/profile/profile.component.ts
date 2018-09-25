@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
   scoreArr: any;
   constructor(private api: ApiService, private data: SampleData, private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
   authTrue = false;
+  userID: any;
   public user = {
     name: '',
     score: ''
@@ -39,7 +40,10 @@ export class ProfileComponent implements OnInit {
         this.api.getUserById(res._id).subscribe((data: any) => {
           console.log('got data: ', data);
           this.user = data;
-          this.profileUrl = data.profilePic;
+          this.userID = data._id;
+          if (data.profilePic) {
+            this.profileUrl = data.profilePic;
+          }
           if (data.learningStyles) {
             this.api.getCoursesByUserId(res._id).subscribe(courses => {
               console.log(courses);
@@ -138,6 +142,30 @@ export class ProfileComponent implements OnInit {
     // this.courses = this.filtered_secod.filter(item => item.courseAccent === value);
     this.courses = this.filtered_secod.filter(item => item.logo.toUpperCase().indexOf(value.toUpperCase()) !== -1);
     console.log('accent', this.courses);
+  }
+
+  complexityChange(value) {
+    alert(value);
+  }
+
+
+  changePhoto() {
+    const url = prompt('Please enter photo URL');
+    if (url == null || url === '') {
+      alert('You have to give a url');
+    } else {
+      alert(url);
+    }
+    const postData = {
+      profilePic: url,
+    };
+    console.log(postData);
+
+    this.api.updateUser(this.userID, postData).subscribe(res => {
+      console.log(res);
+    });
+    // alert(this.userID);
+
   }
 
   mapUser() {

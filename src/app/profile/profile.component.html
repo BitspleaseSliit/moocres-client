@@ -3,7 +3,7 @@
   <div class="card col-md-2 ml50 mr75 p15 m fit">
     <img [src]="profileUrl" alt="John" style="width:100%">
     <p>
-      <button>Change photo</button>
+      <button (click)="changePhoto()">Change photo</button>
     </p>
     <h1>{{user.name}}</h1>
     <a *ngIf="user && !style || style !=='Not found yet'" routerLink="/learnerstyles">Take questionnaire again</a>
@@ -77,6 +77,44 @@
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <div class="w75">
+            <div class=" pull-left">
+              
+            </div>
+
+            <div class="w47 pull-right question">
+              <div class="w25 pull-left">
+                <div class="mr100 dropdown-label">Understanding Complexity</div>
+              </div>
+
+              <div id="" class="input-append dropdown question w75 pull-right">
+
+                <select class="topic-box" (change)="complexityChange(level.value)" #level>
+                  <option value=0> Please Select </option>
+                  <option value=1>Very Easy</option>
+                  <option value=2>Easy</option>
+                  <option value=3>Fairly Easy</option>
+                  <option value=4>Standard</option>
+                  <option value=5>Fairly Difficult</option>
+                  <option value=6>Difficult</option>
+                  <option value=7>Very Difficult</option>
+                  
+Very Easy - 1
+Easy - 2
+Fairly Easy - 3
+Standard - 4
+Fairly Difficult - 5
+Difficult - 6
+Very Difficult - 7
+
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
       </div>
     </div>

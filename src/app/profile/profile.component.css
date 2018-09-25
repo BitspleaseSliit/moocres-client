@@ -505,4 +505,8 @@
     position: relative;
     top: -120px;
   }
+
+  .mr100{
+    margin-right: 120px;
+  }
   
