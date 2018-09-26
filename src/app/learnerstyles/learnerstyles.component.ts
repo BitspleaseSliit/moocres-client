@@ -1,6 +1,7 @@
 import { Inject, Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { LOCAL_STORAGE, WebStorageService } from 'angular-webstorage-service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-learnerstyles',
@@ -35,11 +36,17 @@ export class LearnerstylesComponent implements OnInit {
 
   pageNumber = 0;
   check = false;
-  constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
+
+  loggedUser: any;
+  constructor(
+    private api: ApiService,
+    @Inject(LOCAL_STORAGE) private storage: WebStorageService
+  ) { }
 
   ngOnInit() {
     $('html,body').animate({ scrollTop: '0px' }, 'slow');
-
+    this.loggedUser = this.storage.get('loggedUser');
+    console.log('logged in user: ', this.loggedUser);
   }
 
   private calculateing() {
@@ -174,6 +181,14 @@ export class LearnerstylesComponent implements OnInit {
     user.learningStyles = learningStyles;
     user.score = this.styleScore;
     this.storage.set('user', user);
+
+    console.log('learniny style', learningStyles, this.loggedUser._id);
+    const body = {
+      learningStyles: learningStyles
+    };
+    this.api.updateUser(this.loggedUser._id, body).subscribe(res => {
+      console.log('response: ', res);
+    });
     console.log(this.sequentialOrGlobal);
     console.log(this.sensingOrIntuitive);
     console.log(this.visualOrVerbal);

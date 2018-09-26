@@ -12,13 +12,20 @@ import { ApiService } from '../api.service';
 export class ProfileComponent implements OnInit {
 
   scoreArr: any;
-  constructor(private api: ApiService, private data: SampleData, private router: Router, @Inject(LOCAL_STORAGE) private storage: WebStorageService) { }
+  constructor(
+    private api: ApiService,
+    private data: SampleData,
+    private router: Router,
+    @Inject(LOCAL_STORAGE) private storage: WebStorageService
+  ) { }
   authTrue = false;
   userID: any;
   public user = {
     name: '',
     score: ''
   };
+
+  allCourses = [];
   public courses = [];
   tempCourses: any;
   public temp: any;
@@ -41,13 +48,14 @@ export class ProfileComponent implements OnInit {
           console.log('got data: ', data);
           this.user = data;
           this.userID = data._id;
+          this.storage.set('loggedUser', data);
           if (data.profilePic) {
             this.profileUrl = data.profilePic;
           }
           if (data.learningStyles) {
             this.api.getCoursesByUserId(res._id).subscribe(courses => {
               console.log(courses);
-              this.courses = this.tempCourses = this.apiData = courses;
+              this.courses = this.tempCourses = this.apiData = this.allCourses = courses;
             });
             if (data.learningStyles.active === 1) {
               this.style += 'Active/';
@@ -137,36 +145,68 @@ export class ProfileComponent implements OnInit {
     this.filtered_secod = this.courses;
   }
   accentChange(value) {
-    this.searchTopic();
-    console.log('filtered', this.filtered_secod);
+    // this.searchTopic();
+    if (Number(value) === -1) {
+      this.courses = this.allCourses;
+      return;
+    }
+    console.log('filtered', this.courses);
     // this.courses = this.filtered_secod.filter(item => item.courseAccent === value);
-    this.courses = this.filtered_secod.filter(item => item.logo.toUpperCase().indexOf(value.toUpperCase()) !== -1);
+    this.courses = this.allCourses.filter(item => item.courseAccent === Number(value));
     console.log('accent', this.courses);
   }
 
   complexityChange(value) {
-    alert(value);
+    if (Number(value) === 0) {
+      this.courses = this.allCourses;
+      return;
+    }
+    this.courses = this.allCourses.filter(item => item.linguisticComplexity === Number(value));
+    // alert(value);
+    console.log('complex: ', value);
   }
 
+  platformChange(value) {
+
+    if (Number(value) === 0) {
+      this.courses = this.allCourses;
+      return;
+    }
+    if (Number(value) === 1) {
+
+      this.courses = this.allCourses.filter(item => item.logo.toUpperCase().indexOf('coursera'.toUpperCase()) !== -1);
+    } else if (Number(value) === 2) {
+
+      this.courses = this.allCourses.filter(item => item.logo.toUpperCase().indexOf('edx'.toUpperCase()) !== -1);
+    } else if (Number(value) === 3) {
+
+      this.courses = this.allCourses.filter(item => item.logo.toUpperCase().indexOf('futureLearn'.toUpperCase()) !== -1);
+    }
+
+
+
+  }
 
   changePhoto() {
     const url = prompt('Please enter photo URL');
     if (url == null || url === '') {
       alert('You have to give a url');
     } else {
-      alert(url);
-    }
-    const postData = {
-      profilePic: url,
-    };
-    console.log(postData);
+      // alert(url);
+      const body = {
+        profilePic: url,
+      };
+      console.log(body);
 
-    this.api.updateUser(this.userID, postData).subscribe(res => {
-      console.log(res);
-    });
+      this.api.updateUser(this.userID, body).subscribe(res => {
+        console.log('updated url response: ', res);
+        this.ngOnInit();
+      });
+    }
     // alert(this.userID);
 
   }
+
 
   mapUser() {
     let aCount = 0;

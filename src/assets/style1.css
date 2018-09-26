@@ -614,7 +614,7 @@ body.archive #masthead #logo a:before, #masthead.sticky #logo a:before{
 .recipe-box{
 	align-self: stretch;
 	/* flex-basis: 33%; */
-	flex-basis: 25%;
+	flex-basis: 33%;
 	text-align: center;
 	margin-bottom: 90px;
 	padding: 0 25px;
@@ -1763,7 +1763,8 @@ ul, ol, nav ul, nav ol {
 
 .title {
     color: grey;
-    font-size: 18px;
+	font-size: 18px;
+	font-weight: bold;
 }
 
 button {

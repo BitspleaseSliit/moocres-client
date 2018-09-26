@@ -11,7 +11,8 @@ export class ApiService {
     //   responseSucces = new BehaviorSubject('No error');
     //   errorStatus = false;
     errorStatus = false;
-    private API_URL = 'http://ec2-18-136-100-85.ap-southeast-1.compute.amazonaws.com:3000';
+    // private API_URL = 'http://ec2-18-136-100-85.ap-southeast-1.compute.amazonaws.com:3000';
+    private API_URL = 'http://localhost:3000';
 
     constructor(
         private https: Http,
