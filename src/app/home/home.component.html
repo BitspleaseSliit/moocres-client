@@ -75,129 +75,18 @@
           <h2 class="section-title-popular">Most Popular Courses of the month</h2>
 
           <div class="row">
-            <div class="columns recipe-box" data-id="1197">
-              <div>
-                <a routerLink="/bestcourses" title="Frontend Developer">
-                  <div class="recipe-box-fruit" style="background-image: url(./assets/coursera-card.png)"></div>
-                  <h3 class="recipe-box-title">Android App Development</h3>
+            <div *ngFor="let course of courses"  class="col-md-3 recipe-box" data-id="1197">
+              <div class="pointer">
+                <a (click)="newTab(course.courseUrl)" title="Frontend Developer">
+                  <div *ngIf="course.logo == 'coursera'" class="recipe-box-fruit" style="background-image: url(assets/coursera-card.png)"></div>
+                  <div *ngIf="course.logo == 'futureLearn'" class="recipe-box-fruit" style="background-image: url(assets/futureLearn.png)"></div>
+                  <div *ngIf="course.logo == 'edx'" class="recipe-box-fruit" style="background-image: url(assets/edxLogo.png)"></div>
+                  <h3 class="recipe-box-title">{{course.name}}</h3>
                   <div class="recipe-box-location">
-                    <p>Vanderbilt University</p>
+                    <p>{{course.provider}}</p>
                   </div>
                   <div class="recipe-box-link">
                     View Course
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="columns recipe-box" data-id="181">
-              <div>
-                <a routerLink="/bestcourses" title="Senior Backend Developer">
-                  <div class="recipe-box-fruit" style="background-image: url(./assets/futureLearn.png)"></div>
-                  <h3 class="recipe-box-title">Neural networks and Deep Learning</h3>
-                  <div class="recipe-box-location">
-                    <p>deeplearning.ai</p>
-                  </div>
-                  <div class="recipe-box-link">
-                    view course
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="columns recipe-box" data-id="3047">
-              <div>
-                <a routerLink="/bestcourses" title="Claims Experience Adjuster (Property)">
-                  <div class="recipe-box-fruit" style="background-image: url(./assets/edxLogo.png)"></div>
-                  <h3 class="recipe-box-title">Blockchain</h3>
-                  <div class="recipe-box-location">
-                    <p>The State University of New York</p>
-                  </div>
-                  <div class="recipe-box-link">
-                    view course
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="columns recipe-box" data-id="3407">
-              <div>
-                <a routerLink="/bestcourses" title="Senior Product Manager">
-                  <div class="recipe-box-fruit" style="background-image: url(./assets/edxLogo.png)"></div>
-                  <h3 class="recipe-box-title">Senior Product Manager</h3>
-                  <div class="recipe-box-location">
-                    <p>Sarona Campus, Tel Aviv</p>
-                  </div>
-                  <div class="recipe-box-link">
-                    view course
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="columns recipe-box" data-id="3208">
-              <div>
-                <a routerLink="/bestcourses" title="Content Marketer">
-                  <div class="recipe-box-fruit" style="background-image: url(./assets/futureLearn.png)"></div>
-                  <h3 class="recipe-box-title">Content Marketer</h3>
-                  <div class="recipe-box-location">
-                    <p>Sarona Campus, Tel Aviv</p>
-                  </div>
-                  <div class="recipe-box-link">
-                    view course
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="columns recipe-box" data-id="109">
-              <div>
-                <a routerLink="/bestcourses" title="Android Developer">
-                  <div class="recipe-box-fruit" style="background-image: url(./assets/futureLearn.png)"></div>
-                  <h3 class="recipe-box-title">Android Developer</h3>
-                  <div class="recipe-box-location">
-                    <p>Sarona Campus, Tel Aviv</p>
-                  </div>
-                  <div class="recipe-box-link">
-                    view course
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="columns recipe-box" data-id="2207">
-              <div>
-                <a routerLink="/bestcourses" title="Insurance Filing Specialist">
-                  <div class="recipe-box-fruit" style="background-image: url(./assets/edxLogo.png)"></div>
-                  <h3 class="recipe-box-title">Insurance Filing Specialist</h3>
-                  <div class="recipe-box-location">
-                    <p>Soho, New York</p>
-                  </div>
-                  <div class="recipe-box-link">
-                    view course
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="columns recipe-box" data-id="1194">
-              <div>
-                <a routerLink="/bestcourses" title="QA Engineer">
-                  <div class="recipe-box-fruit" style="background-image: url(./assets/futureLearn.png)"></div>
-                  <h3 class="recipe-box-title">QA Engineer</h3>
-                  <div class="recipe-box-location">
-                    <p>Sarona Campus, Tel Aviv</p>
-                  </div>
-                  <div class="recipe-box-link">
-                    view course
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="columns recipe-box" data-id="2215">
-              <div>
-                <a routerLink="/bestcourses" title="Partner Marketing Manager">
-                  <div class="recipe-box-fruit" style="background-image: url(./assets/edxLogo.png)"></div>
-                  <h3 class="recipe-box-title">Partner Marketing Manager</h3>
-                  <div class="recipe-box-location">
-                    <p>Soho, New York</p>
-                  </div>
-                  <div class="recipe-box-link">
-                    view course
                   </div>
                 </a>
               </div>
