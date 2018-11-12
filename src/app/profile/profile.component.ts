@@ -141,7 +141,31 @@ export class ProfileComponent implements OnInit {
     //     }
     //   });
     // });
-    this.courses = this.filtered.filter(item => item.name.toUpperCase().indexOf(this.topicQ.toUpperCase()) !== -1);
+
+    // tslint:disable-next-line:max-line-length
+    // this.courses = this.filtered.filter(item => item.abstractTopics.filter(topic => topic.toUpperCase().indexOf(this.topicQ.toUpperCase()) !== -1)); 
+    this.courses = [];
+    this.filtered.forEach(element => {
+      element.abstractTopics.forEach(topic => {
+
+        const input = this.topicQ.toLowerCase();
+
+        const re = new RegExp(input);
+
+
+        console.log('expression: ', re);
+
+        const str = topic;
+        console.log('string :', str);
+        if (str.search(re) === -1) {
+          console.log('Does not contain ', input);
+        } else {
+          this.courses.push(element);
+          console.log(element);
+        }
+
+      });
+    });
     this.filtered_secod = this.courses;
   }
   accentChange(value) {
