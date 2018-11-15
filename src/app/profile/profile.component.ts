@@ -12,6 +12,10 @@ import { ApiService } from '../api.service';
 export class ProfileComponent implements OnInit {
 
   scoreArr: any;
+  topicFiltered: any[];
+  accentFiltered: any[];
+  complexityFiltered: any[];
+  platformFiltered: any[];
   constructor(
     private api: ApiService,
     private data: SampleData,
@@ -39,6 +43,10 @@ export class ProfileComponent implements OnInit {
   searchQ = '';
   topicQ = '';
   apiData: any;
+
+  accentValue: any;
+  platformValue: any;
+  complexityValue: any;
 
   ngOnInit() {
     this.style = '';
@@ -161,51 +169,65 @@ export class ProfileComponent implements OnInit {
           console.log('Does not contain ', input);
         } else {
           this.courses.push(element);
+          this.topicFiltered = this.courses;
           console.log(element);
         }
 
       });
     });
-    this.filtered_secod = this.courses;
+    // this.filtered_secod = this.courses;
   }
   accentChange(value) {
     // this.searchTopic();
+    this.searchTopic();
+    this.complexityValue = 0;
+    this.platformValue = 0;
     if (Number(value) === -1) {
-      this.courses = this.allCourses;
+      this.courses = this.topicFiltered;
       return;
     }
     console.log('filtered', this.courses);
     // this.courses = this.filtered_secod.filter(item => item.courseAccent === value);
-    this.courses = this.allCourses.filter(item => item.courseAccent === Number(value));
+    this.courses = this.topicFiltered.filter(item => item.courseAccent === Number(value));
     console.log('accent', this.courses);
+    this.accentFiltered = this.courses;
   }
 
   complexityChange(value) {
+    this.searchTopic();
+    this.accentValue = -1;
+    this.platformValue = 0;
     if (Number(value) === 0) {
-      this.courses = this.allCourses;
+      this.courses = this.topicFiltered;
       return;
     }
-    this.courses = this.allCourses.filter(item => item.linguisticComplexity === Number(value));
+    this.courses = this.topicFiltered.filter(item => item.linguisticComplexity === Number(value));
     // alert(value);
     console.log('complex: ', value);
+    // this.complexityFiltered = this.courses;
   }
 
   platformChange(value) {
-
+    this.searchTopic();
+    this.accentValue = -1;
+    this.complexityValue = 0;
+    // this.complexityChange(this.complexityValue);
     if (Number(value) === 0) {
-      this.courses = this.allCourses;
+      this.courses = this.topicFiltered;
       return;
     }
     if (Number(value) === 1) {
 
-      this.courses = this.allCourses.filter(item => item.logo.toUpperCase().indexOf('coursera'.toUpperCase()) !== -1);
+      this.courses = this.topicFiltered.filter(item => item.logo.toUpperCase().indexOf('coursera'.toUpperCase()) !== -1);
     } else if (Number(value) === 2) {
 
-      this.courses = this.allCourses.filter(item => item.logo.toUpperCase().indexOf('edx'.toUpperCase()) !== -1);
+      this.courses = this.topicFiltered.filter(item => item.logo.toUpperCase().indexOf('edx'.toUpperCase()) !== -1);
     } else if (Number(value) === 3) {
 
-      this.courses = this.allCourses.filter(item => item.logo.toUpperCase().indexOf('futureLearn'.toUpperCase()) !== -1);
+      this.courses = this.topicFiltered.filter(item => item.logo.toUpperCase().indexOf('futureLearn'.toUpperCase()) !== -1);
     }
+
+    // this.platformFiltered = this.courses;
 
 
 

@@ -68,7 +68,7 @@
 
               <div id="" class="input-append dropdown question w75 pull-right">
 
-                <select id="" class="topic-box" (change)="accentChange(accent.value)" #accent>
+                <select id="" class="topic-box" [(ngModel)]="accentValue" (change)="accentChange(accent.value)" #accent>
                   <option value='-1'> Please Select </option>
                   <option value='1'>Native English</option>
                   <option value='0'>Non-Native English</option>
@@ -86,7 +86,7 @@
               </div>
               <div id="" class="input-append dropdown question w75 pull-right">
 
-                <select id="" class="topic-box" (change)="platformChange(platForm.value)" #platForm>
+                <select id="" class="topic-box" [(ngModel)]="platformValue" (change)="platformChange(platForm.value)" #platForm>
                   <option value='0'> Please Select </option>
                   <option value='1'>Coursera</option>
                   <option value='2'>edEx</option>
@@ -102,7 +102,7 @@
 
               <div id="" class="input-append dropdown question w75 pull-right">
 
-                <select class="topic-box" (change)="complexityChange(level.value)" #level>
+                <select class="topic-box"  [(ngModel)]="complexityValue" (change)="complexityChange(level.value)" #level>
                   <option value=0> Please Select </option>
                   <option value=1>Very Easy</option>
                   <option value=2>Easy</option>
